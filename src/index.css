@@ -5,54 +5,167 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
-  background: rgb(0,15,177);
-  background: linear-gradient(132deg, rgba(0,15,177,1) 0%, rgba(22,0,168,1) 0%, rgba(0,29,105,1) 38%, rgba(0,10,70,1) 50%, rgba(3,6,62,1) 80%, rgba(9,0,85,1) 94%);
+  height: 100vh;
+
+  background: rgb(0, 15, 177);
+  background: linear-gradient(
+    132deg,
+    rgba(0, 15, 177, 1) 0%,
+    rgba(22, 0, 168, 1) 0%,
+    rgba(0, 29, 105, 1) 38%,
+    rgba(0, 10, 70, 1) 50%,
+    rgba(3, 6, 62, 1) 80%,
+    rgba(9, 0, 85, 1) 94%
+  );
   background-repeat: no-repeat;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+header {
+  background: rgb(0, 5, 129);
+  background: linear-gradient(
+    101deg,
+    rgb(0 10 255 / 0%) 0%,
+    rgb(9 24 163) 27%,
+    rgb(1 5 47) 65%,
+    rgb(8 2 54) 100%,
+    rgba(10, 2, 75, 1) 50%
+  );
 }
 
-
-.container{
+.container {
   display: flex;
   justify-content: space-between;
   position: relative;
   align-items: center;
-  background: rgb(0,5,129);
-  background: linear-gradient(101deg, rgb(0 10 255) 0%, rgb(9 24 163) 27%, rgb(1 5 47) 65%, rgb(8 2 54) 100%, rgba(10,2,75,1) 50%);
 }
 
-.container h1{
+.container h1 {
   margin: 0;
-  font-size: 54px;
+  font-size: 70px;
   color: white;
+  font-family: 'Digital Display';
 }
 
 .container h2 {
-  margin: 0px 18px;
-  font-size: 24px;
+  margin: 0px 80px 0px 0px;
+  font-size: 31px;
   color: white;
+  font-family: sans-serif;
+}
+
+.container p {
+  font-size: 70px;
+    font-family: 'Digital Display';
+    color: white;
+    position: absolute;
+    right: 35px;
+    margin: 0px
 }
 /* .fond-separity{
 background: rgb(0,9,255);
 background: linear-gradient(113deg, rgba(0,9,255,1) 0%, rgba(10,2,75,1) 50%, rgba(0,0,0,1) 50%, rgba(8,0,64,1) 100%);
 } */
 
-.one-marcador{
+.one-marcador {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 .one-marcador h1 {
- /*  border: solid 2px white;
-  box-shadow: 0px 0px 20px rgb(8, 0, 255); */
+  border: solid 4px white;
+  box-shadow: 0px 0px 20px rgb(8, 0, 255);
   color: white;
-  font-size: 150px;
-  padding: 0px 8%;
-  margin: 30px;
-  /* border-radius: 17px; */
+  font-size: 190px;
+  margin: 50px;
+  font-family: 'Digital Display';
+  src: url(https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2)
+    format('woff');
+  border-radius: 17px;
+}
+.marcador-izquierdo {
+  padding-right: 6%;
+  padding-left: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.marcador-derecho {
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.names-one {
+  display: flex;
+  justify-content: space-around;
+}
+
+.names-two {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hola{
+  background: rgb(12,3,130);
+background: linear-gradient(90deg, rgba(12,3,130,1) 5%, rgba(0,1,20,1) 24%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 51%, rgba(0,1,20,1) 68%, rgba(6,0,83,1) 89%);
+}
+
+.hola h2 {
+  display: inline-flex;
+  margin: 0px;
+  align-items: center;
+  color: white;
+  font-size: 35px;
+}
+
+.player-two {
+  margin-right: 76px !important;
+}
+
+.player-three {
+  margin-right: 1px !important;
+}
+
+@font-face {
+  font-family: 'Digital Display';
+  src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2')
+      format('woff2'),
+    url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.container-category{
+  display: inline-flex;
+  color: white;
+  align-items: center;
+  margin-top: 37px;
+}
+.container-category h2{
+  font-size: 31px;
+  margin-left: 10px;
+}
+
+.container-category h3{
+  font-family: 'Digital Display';
+  position: absolute;
+  left: 167px;
+  font-size: 60px;
+}
+
+.container-category p{
+  font-family: 'Digital Display';
+  position: absolute;
+  left: 195px;
+  margin-bottom: 53px;
+  font-size: 25px;
 }

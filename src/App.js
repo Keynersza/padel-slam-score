@@ -4,9 +4,9 @@ import Score from './Pages/score';
 
 function App() {
   return (
-    <div >
+    
      <Score/>
-    </div>
+    
   );
 }
 
