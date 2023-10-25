@@ -5,9 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+  background: rgb(0,15,177);
+  background: linear-gradient(132deg, rgba(0,15,177,1) 0%, rgba(22,0,168,1) 0%, rgba(0,29,105,1) 38%, rgba(0,10,70,1) 50%, rgba(3,6,62,1) 80%, rgba(9,0,85,1) 94%);
+  background-repeat: no-repeat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  background: rgb(0,5,129);
+  background: linear-gradient(101deg, rgb(0 10 255) 0%, rgb(9 24 163) 27%, rgb(1 5 47) 65%, rgb(8 2 54) 100%, rgba(10,2,75,1) 50%);
+}
+
+.container h1{
+  margin: 0;
+  font-size: 54px;
+  color: white;
+}
+
+.container h2 {
+  margin: 0px 18px;
+  font-size: 24px;
+  color: white;
+}
+/* .fond-separity{
+background: rgb(0,9,255);
+background: linear-gradient(113deg, rgba(0,9,255,1) 0%, rgba(10,2,75,1) 50%, rgba(0,0,0,1) 50%, rgba(8,0,64,1) 100%);
+} */
+
+.one-marcador{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.one-marcador h1 {
+ /*  border: solid 2px white;
+  box-shadow: 0px 0px 20px rgb(8, 0, 255); */
+  color: white;
+  font-size: 150px;
+  padding: 0px 8%;
+  margin: 30px;
+  /* border-radius: 17px; */
 }
