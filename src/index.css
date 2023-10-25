@@ -6,26 +6,120 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-
-  background: rgb(0, 15, 177);
-  background: linear-gradient(
-    132deg,
-    rgba(0, 15, 177, 1) 0%,
-    rgba(22, 0, 168, 1) 0%,
-    rgba(0, 29, 105, 1) 38%,
-    rgba(0, 10, 70, 1) 50%,
-    rgba(3, 6, 62, 1) 80%,
-    rgba(9, 0, 85, 1) 94%
-  );
-  background-repeat: no-repeat;
+  width: 100%;
+  /*   background-image: url(); */
+  background-image: url('./Assets/FondoPadel\ Score.png');
+  background-size: cover;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+.name-one h2 {
+  color: white;
+  position: absolute;
+  bottom: 93%;
+  right: 73%;
+  font-size: 60px;
+  margin: 0px;
+}
+.name-two h2 {
+  color: white;
+  position: absolute;
+  bottom: 93%;
+  right: 7%;
+  font-size: 60px;
+  margin: 0px;
+}
 
-header {
+.line-score {
+  padding-top: 38px;
+  width: 100%;
+}
+.line-inf {
+  position: fixed;
+  top: 62%;
+  width: 100%;
+}
+.logo {
+  width: 17%;
+  object-fit: contain;
+  position: fixed;
+  left: 42%;
+  top: 77%;
+}
+
+.numbers {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.num-left {
+  color: white;
+  position: absolute;
+  right: 62%;
+  font-size: 80px;
+  bottom: 85%;
+  margin: 0px;
+}
+
+.num-right {
+  color: white;
+  position: absolute;
+  right: 36%;
+  font-size: 80px;
+  bottom: 85%;
+  margin: 0px;
+}
+.sets-partida{
+  display: inline-flex;
+    align-items: center;
+}
+.sets-letf{
+  position: absolute;
+  text-align: center;
+  right: 83%;
+  margin: 0px;
+  top: 6%;
+  font-size: 110px;
+  color: white;
+}
+
+.sets-righ{
+  position: absolute;
+  text-align: center;
+  right: 16%;
+  margin: 0px;
+  top: 6%;
+  font-size: 110px;
+  color: white;
+}
+
+.puntos{
+  display: flex;
+  justify-content: space-between;
+}
+
+.punto-iz{
+    margin: 0px;
+    position: fixed;
+    bottom: 75px;
+    left: 9%;
+    font-size: 200px;
+    color: white;
+}
+
+.punto-ez{
+  margin: 0px;
+    position: fixed;
+    bottom: 75px;
+    right: 9%;
+    font-size: 200px;
+    color: white;
+}
+
+/* .container{
+  background-image: url('./Assets/linea-Superior.png');
+} */
+/* header {
   background: rgb(0, 5, 129);
   background: linear-gradient(
     101deg,
@@ -66,10 +160,6 @@ header {
     right: 35px;
     margin: 0px
 }
-/* .fond-separity{
-background: rgb(0,9,255);
-background: linear-gradient(113deg, rgba(0,9,255,1) 0%, rgba(10,2,75,1) 50%, rgba(0,0,0,1) 50%, rgba(8,0,64,1) 100%);
-} */
 
 .one-marcador {
   display: flex;
@@ -168,4 +258,4 @@ background: linear-gradient(90deg, rgba(12,3,130,1) 5%, rgba(0,1,20,1) 24%, rgba
   left: 195px;
   margin-bottom: 53px;
   font-size: 25px;
-}
+} */

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../Assets/BlancoLogo.png';
+
 const Score = () => {
   return (
     <div>
