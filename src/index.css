@@ -16,7 +16,7 @@ body {
   animation: nameTop1 1s ease-in;
   color: white;
   position: fixed;
-  bottom: 94%;
+  bottom: 93%;
   right: 74%;
   font-size: 55px;
   margin: 0px;
@@ -25,7 +25,7 @@ body {
   animation: nameTop2 1s ease-in;
   color: white;
   position: absolute;
-  bottom: 94%;
+  bottom: 93%;
   right: 8%;
   font-size: 55px;
   margin: 0px;
@@ -42,7 +42,7 @@ body {
 }
 
 .line-score {
-  padding-top: 38px;
+  padding-top: 50px;
   width: 100%;
 }
 .line-inf {
@@ -78,7 +78,7 @@ body {
 .photo{
   width: 100%;
   /* max-width: 1367px; */
-  margin-bottom: 110px;
+ 
 }
 
 
@@ -87,12 +87,12 @@ body {
   width: 2%;
   position: absolute;
   left: 36%;
-  top: 4%;
+  top: 3%;
 }
 .sacador{
   text-align: center;
     font-size: 70px;
-    margin: -60px auto;
+    margin: 0px auto;
     color: white;
 }
 .num-right {
