@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/score1' element={<Score />} /> */}
+        <Route path='/score1' element={<Score />} /> 
         <Route path='/' element={<Score2 />} />
       </Routes>
     </BrowserRouter>

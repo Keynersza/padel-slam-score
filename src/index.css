@@ -2,209 +2,117 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; 
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  width: 100%;
-  /*   background-image: url(); */
-  background-image: url('./Assets/FondoPadel\ Score.png');
-  background-size: cover;
 }
 
-.name-one h2 {
-  animation: nameTop1 1s ease-in;
+.name-two h2 {
+  font-family: 'Aspire SC Light Oblique';
+  position: relative;
   color: white;
-  position: fixed;
-  bottom: 93%;
-  right: 74%;
-  font-size: 55px;
+  font-size: 40px;
+  margin: -2px;
+  font-weight: 300;
+  width: 290px;
+  top: 10px;
+}
+.name-button h2 {
+  font-family: 'Aspire SC Light Oblique';
+  color: white;
+  font-size: 40px;
   margin: 0px;
+  font-weight: 300;
+}
+.name-button {
+  position: absolute;
+  top: 88%;
+  margin-left: 45px;
 }
 .name-two h2 {
-  animation: nameTop2 1s ease-in;
-  color: white;
+  margin-left: 42px;
+}
+.puntos-left {
+  font-family: 'Quartz MS';
   position: absolute;
-  bottom: 93%;
-  right: 8%;
-  font-size: 55px;
-  margin: 0px;
-}
-
-.time{
-  position: absolute;
-  font-family: 'Digital Display';
-  animation: timeTop 1s ease-in;
-  right: 46%;
-  bottom: 80%;
-  color: white;
-  font-size: 80px
-}
-
-.line-score {
-  padding-top: 50px;
-  width: 100%;
-}
-.line-inf {
-  position: fixed;
-  top: 62%;
-  width: 100%;
-}
-.logo {
-  width: 17%;
-  object-fit: contain;
-  position: fixed;
-  left: 42%;
-  top: 77%;
-}
-
-.numbers {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.num-left {
-  animation: nameTop1 1s ease-in;
-  font-family: 'Digital Display';
-  color: white;
-  position: absolute;
-  right: 62%;
-  font-size: 95px;
-  bottom: 86%;
-  margin: 0px;
-}
-
-.photo{
-  width: 100%;
-  /* max-width: 1367px; */
- 
-}
-
-
-.icon{
-  animation: timeTop 1s ease-in;
-  width: 2%;
-  position: absolute;
-  left: 36%;
-  top: 3%;
-}
-.sacador{
-  text-align: center;
-    font-size: 70px;
-    margin: 0px auto;
-    color: white;
-}
-.num-right {
-  animation: nameTop2 1s ease-in;
-  font-family: 'Digital Display';
-  color: white;
-  position: absolute;
-  right: 36%;
-  font-size: 95px;
-  bottom: 86%;
-  margin: 0px;
-}
-
-.sets-partida{
-  display: inline-flex;
-    align-items: center;
-}
-.sets-left{
-  animation: nameTop1 1s ease-in;
-    font-family: 'Digital Display';
-    position: absolute;
-    text-align: center;
-    right: 82%;
-    margin: 0px;
-    top: 13%;
-    font-size: 130px;
-    color: white;
-}
-
-
-.sets-righ{
-  animation: nameTop2 1s ease-in;
-  font-family: 'Digital Display';
-  position: absolute;
-  text-align: center;
-  right: 14%;
+  right: 88%;
   margin: 0px;
   top: 13%;
-  font-size: 130px;
+  font-size: 174px;
   color: white;
 }
 
-.puntos{
+.puntos-righ {
+  font-family: 'Quartz MS';
+  position: absolute;
+  text-align: center;
+  right: 69%;
+  margin: 0px;
+  top: 57%;
+  color: #def33c;
+  font-size: 174px;
+}
+
+.sets-buttom {
+  font-family: 'Quartz MS';
+  margin: 0px;
+  color: white;
+  position: absolute;
+  top: 79%;
+  left: 734px;
+  font-size: 80px;
+}
+.sets-top {
+  font-family: 'Quartz MS';
+  margin: 0px;
+  color: white;
+  position: absolute;
+  top: 8%;
+  left: 729px;
+  font-size: 80px;
+}
+
+.title-padel {
+  margin: 0;
+  position: absolute;
+  right: 26%;
+  transform: rotate(-66deg);
+  font-size: 49px;
+  top: 127px;
+  color: #8080804d;
+}
+.box-cancha {
+  position: absolute;
+  bottom: 137px;
+  right: 809px;
   display: flex;
-  justify-content: space-between;
-}
-
-.punto-iz{
-  animation: ptsBut 1s ease-in;
-  font-family: 'Digital Display';
-  margin: 0px;
-  position: fixed;
-  top: 75%;
-  left: 9%;
-  font-size: 260px;
+  transform: rotate(293deg);
   color: white;
 }
-
-.punto-ez{
-  animation: ptsBut 1s ease-in;
-  font-family: 'Digital Display';
-  margin: 0px;
-    position: fixed;
-    top: 75%;
-    right: 9%;
-    font-size: 265px;
-    color: white;
+.cancha {
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
 }
-@font-face {
-  font-family: 'Digital Display';
-  src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2')
-      format('woff2'),
-    url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2')
-      format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+
+.numero-cancha {
+  font-size: 39px;
+  font-family: 'Quartz MS';
+  margin: 0px 0px 0px 12px;
 }
 
 
-.conta-loader{
-  width: 100%;
-  height: 100vh;
-  background-color: whitesmoke;
+@font-face{
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+  src: url('Assets/fonts/AspireSCLightOblique-Regular.ttf'),
+  format('ttf')
 }
-
-.loader {
-  width: 8%;
-  height: 17%;
-  border: 3px solid #686868;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-  right: 47%;
-  top: 40%;
+@font-face{
+  font-family: 'Quartz MS';
+  src: url('Assets/fonts/QuartzMSRegular.TTF'),
+  format('ttf')
 }
-.loader::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid;
-  border-color: #FF3D00 transparent;
-}
-
 
 @keyframes rotation {
   0% {
@@ -213,193 +121,299 @@ body {
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 
 @keyframes nameTop1 {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(-100px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
-
   }
 }
 @keyframes nameTop2 {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(100px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
-
   }
 }
 @keyframes ptsBut {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(100px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
-
   }
 }
 @keyframes timeTop {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(-100px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
-
   }
 }
 
-/* .container{
-  background-image: url('./Assets/linea-Superior.png');
+/* container{
+  width: '100%',
+  height'100%',
+  position: 'absolute',
+  objectFit: 'fill',
+  objectPosition: 'center',
+  clipPath: 'polygon(0px 0px, 72% 0%, 41% 143%, 0% 100%)'
 } */
-/* header {
-  background: rgb(0, 5, 129);
-  background: linear-gradient(
-    101deg,
-    rgb(0 10 255 / 0%) 0%,
-    rgb(9 24 163) 27%,
-    rgb(1 5 47) 65%,
-    rgb(8 2 54) 100%,
-    rgba(10, 2, 75, 1) 50%
-  );
-}
 
-.container {
-  display: flex;
-  justify-content: space-between;
+.linea-top {
+  border: 1px solid;
   position: relative;
-  align-items: center;
-}
-
-.container h1 {
-  margin: 0;
-  font-size: 70px;
   color: white;
-  font-family: 'Digital Display';
+  top: 25px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 33%;
+  box-shadow: -4px 0px 8px 1px #4f00ffb5;
 }
 
-.container h2 {
-  margin: 0px 80px 0px 0px;
-  font-size: 31px;
+.border-team-a {
+  position: absolute;
   color: white;
-  font-family: sans-serif;
-}
-
-.container p {
-  font-size: 70px;
-    font-family: 'Digital Display';
-    color: white;
-    position: absolute;
-    right: 35px;
-    margin: 0px
-}
-
-.one-marcador {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.one-marcador h1 {
-  border: solid 4px white;
-  box-shadow: 0px 0px 20px rgb(8, 0, 255);
-  color: white;
-  font-size: 190px;
-  margin: 50px;
-  font-family: 'Digital Display';
-  src: url(https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2)
-    format('woff');
-  border-radius: 17px;
-}
-.marcador-izquierdo {
-  padding-right: 6%;
-  padding-left: 3%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
-
-.marcador-derecho {
-  padding-right: 5%;
-  padding-left: 5%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
-
-.names-one {
-  display: flex;
-  justify-content: space-around;
-}
-
-.names-two {
-  display: flex;
-  justify-content: space-around;
-}
-
-.hola{
-  background: rgb(12,3,130);
-background: linear-gradient(90deg, rgba(12,3,130,1) 5%, rgba(0,1,20,1) 24%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 51%, rgba(0,1,20,1) 68%, rgba(6,0,83,1) 89%);
-}
-
-.hola h2 {
-  display: inline-flex;
-  margin: 0px;
-  align-items: center;
-  color: white;
-  font-size: 35px;
-}
-
-.player-two {
-  margin-right: 76px !important;
-}
-
-.player-three {
-  margin-right: 1px !important;
-}
-
-@font-face {
-  font-family: 'Digital Display';
-  src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2')
-      format('woff2'),
-    url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2')
-      format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-.container-category{
-  display: inline-flex;
-  color: white;
-  align-items: center;
-  margin-top: 37px;
-}
-.container-category h2{
-  font-size: 31px;
+  bottom: 126px;
+  background: #F82D97;
   margin-left: 10px;
+  transform: skew(389deg, 360deg);
+  width: 535px;
+  padding: 2px;
 }
 
-.container-category h3{
-  font-family: 'Digital Display';
-  position: absolute;
-  left: 167px;
-  font-size: 60px;
+.border-team-a p {
+  font-family: "Aspire SC LIGHT OBLIQUE";
+  margin: 0;
+  margin-left: 11px;
+  transform: skew(325deg, 0deg);
+  font-weight: 800;
+  font-size: 20px;
 }
 
-.container-category p{
-  font-family: 'Digital Display';
+.border-team-b {
   position: absolute;
-  left: 195px;
-  margin-bottom: 53px;
-  font-size: 25px;
-} */
+  color: white;
+  background: #F82D97;
+  left: 78px;
+  top: 129px;
+  width: 543px;
+  transform: skew(326deg, 360deg);
+  padding: 1px;
+}
+.border-team-b p {
+  font-family: "Aspire SC LIGHT OBLIQUE";
+  margin: 0;
+  float: right;
+  margin-right: 11px;
+  margin-bottom: 2px;
+  transform: skew(384deg, 360deg);
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.box-1-top {
+  position: absolute;
+    border: 14px solid;
+    right: 1848px;
+    top: 129px;
+    color: #f82d97e0;
+    transform: skew(324deg, 360deg);
+}
+
+.box-2-top {
+  position: absolute;
+  border: 14px solid;
+  right: 1882px;
+  top: 129px;
+  color: #f82d9794;
+  transform: skew(324deg, 360deg);
+}
+.box-1-botton {
+  position: absolute;
+  border: 15px solid;
+  right: 1335px;
+  bottom: 126px;
+  color: #f82d97e0;
+  transform: skew(391deg, 360deg);
+}
+.box-2-botton {
+  position: absolute;
+  border: 15px solid;
+  border-right: -12px;
+  right: 1299px;
+  bottom: 126px;
+  color: #f82d9794;
+  transform: skew(391deg, 360deg);
+}
+
+.linea-rotate {
+  border: 1px solid;
+  position: relative;
+  width: 98px;
+  color: white;
+  transform: rotate(45deg);
+  top: 58px;
+  left: 621px;
+  margin: 0px;
+  box-shadow: 3px 0px 8px 1px #4f00ff;
+}
+
+.linea-buttom {
+  width: 101px;
+  border: 1px solid;
+  color: white;
+  position: absolute;
+  left: 706px;
+  top: 193px;
+  margin: 0px;
+  box-shadow: 1px 0px 8px 1px #4f00ff;
+}
+
+.linea-top-buttom {
+  border: 1px solid;
+  position: relative;
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 33%;
+  top: 739px;
+  box-shadow: -4px 0px 8px 1px #4f00ffb5;
+}
+
+.linea-rotate-buttom {
+  border: 1px solid;
+  position: relative;
+  width: 98px;
+  color: white;
+  transform: rotate(136deg);
+  top: 702px;
+  left: 622px;
+  margin: 0px;
+  box-shadow: 3px 0px 8px 1px #4f00ff;
+}
+.linea-buttom-buttom {
+  width: 101px;
+  border: 1px solid;
+  color: white;
+  position: absolute;
+  left: 708px;
+  top: 771px;
+  margin: 0px;
+  box-shadow: 1px 0px 8px 1px #4f00ff;
+}
+
+.time {
+  position: absolute;
+  right: 6%;
+  top: 0;
+  border: 1px solid;
+  border-top: none;
+  /* padding: 17px; */
+  background: black;
+  color: white;
+  border-radius: 0px 0px 50px 50px;
+  width: 15%;
+  text-align: center;
+  font-size: 66px;
+  height: 90px;
+}
+.time p {
+  margin: 0px;
+  font-family: 'Quartz MS';
+}
+
+.puntuaciones {
+  position: absolute;
+  right: 0%;
+  top: 30%;
+}
+.sets {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: -5px;
+  color: #ff00f5;
+}
+.sets p {
+  font-family: "Aspire SC LIGHT OBLIQUE";
+  font-size: 23px;
+}
+.puntuacion-1 {
+  display: flex;
+  justify-content: space-around;
+  background: rgb(0, 1, 20);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 1, 20, 1) 0%,
+    rgba(10, 0, 136, 1) 60%,
+    rgba(7, 0, 91, 1) 95%
+  );
+  color: white;
+  width: 560px;
+  font-size: 19px;
+  border-radius: 10px 0px 0px 10px;
+  height: 78px;
+}
+.puntuacion-2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  background: rgb(0, 1, 20);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 1, 20, 1) 0%,
+    rgba(10, 0, 136, 1) 60%,
+    rgba(7, 0, 91, 1) 95%
+  );
+  color: white;
+  width: 560px;
+  border-radius: 10px 0px 0px 10px;
+  height: 78px;
+}
+
+.puntuacion-1 p {
+  font-size: 65px;
+  font-family: 'Quartz MS';
+  margin: -8px;
+}
+
+.puntuacion-2 p {
+  font-size: 65px;
+  font-family: 'Quartz MS';
+  margin: -8px;
+}
+.categoria {
+  position: absolute;
+  right: 745px;
+  transform: rotate(293deg);
+  color: #0034ff;
+  bottom: 140px;
+  display: flex;
+  align-items: center;
+}
+.numero-categoria {
+  font-size: 39px;
+  font-family: 'Quartz MS';
+  margin: 0px 0px 0px 8px;
+}
+
+.title-categoria {
+  font-family: 'Aspire SC Light Oblique';
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+  color: #0f0ff3
+}
