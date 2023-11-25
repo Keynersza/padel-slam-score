@@ -102,16 +102,13 @@ body {
   margin: 0px 0px 0px 12px;
 }
 
-
-@font-face{
+@font-face {
   font-family: 'Aspire SC LIGHT OBLIQUE';
-  src: url('Assets/fonts/AspireSCLightOblique-Regular.ttf'),
-  format('ttf')
+  src: url('Assets/fonts/AspireSCLightOblique-Regular.ttf'), format('ttf');
 }
-@font-face{
+@font-face {
   font-family: 'Quartz MS';
-  src: url('Assets/fonts/QuartzMSRegular.TTF'),
-  format('ttf')
+  src: url('Assets/fonts/QuartzMSRegular.TTF'), format('ttf');
 }
 
 @keyframes rotation {
@@ -188,7 +185,7 @@ body {
   position: absolute;
   color: white;
   bottom: 126px;
-  background: #F82D97;
+  background: #f82d97;
   margin-left: 10px;
   transform: skew(389deg, 360deg);
   width: 535px;
@@ -196,7 +193,7 @@ body {
 }
 
 .border-team-a p {
-  font-family: "Aspire SC LIGHT OBLIQUE";
+  font-family: 'Aspire SC LIGHT OBLIQUE';
   margin: 0;
   margin-left: 11px;
   transform: skew(325deg, 0deg);
@@ -207,7 +204,7 @@ body {
 .border-team-b {
   position: absolute;
   color: white;
-  background: #F82D97;
+  background: #f82d97;
   left: 78px;
   top: 129px;
   width: 543px;
@@ -215,7 +212,7 @@ body {
   padding: 1px;
 }
 .border-team-b p {
-  font-family: "Aspire SC LIGHT OBLIQUE";
+  font-family: 'Aspire SC LIGHT OBLIQUE';
   margin: 0;
   float: right;
   margin-right: 11px;
@@ -227,11 +224,11 @@ body {
 
 .box-1-top {
   position: absolute;
-    border: 14px solid;
-    right: 1848px;
-    top: 129px;
-    color: #f82d97e0;
-    transform: skew(324deg, 360deg);
+  border: 14px solid;
+  right: 1848px;
+  top: 129px;
+  color: #f82d97e0;
+  transform: skew(324deg, 360deg);
 }
 
 .box-2-top {
@@ -348,7 +345,7 @@ body {
   color: #ff00f5;
 }
 .sets p {
-  font-family: "Aspire SC LIGHT OBLIQUE";
+  font-family: 'Aspire SC LIGHT OBLIQUE';
   font-size: 23px;
 }
 .puntuacion-1 {
@@ -415,5 +412,106 @@ body {
   margin: 0;
   font-size: 26px;
   font-weight: 900;
-  color: #0f0ff3
+  color: #0f0ff3;
+}
+.message {
+  border: 1px solid red;
+}
+
+.container-tour {
+  background-image: url('./Assets/FondoPadel\ Score.png');
+  width: 100%;
+  height: 100%;
+}
+.tournament {
+  display: flex;
+  justify-content: space-between;
+  background-image: url('./Assets/Recurso\ 3Fondo.png');
+  height: 100vh;
+    background-size: contain;
+    background-repeat: round;
+}
+.dupla-score {
+  display: flex;
+  margin-bottom: 44px;
+}
+.dupla-score h2{
+  color: white;
+}
+/* .jugadores-flex{
+  display: flex;s
+} */
+
+.duplas {
+  border: 1px solid rgba(160, 156, 156, 0.682);
+  box-shadow: inset 1px -1px 5px 0px #3a00eb;
+  padding: 1rem;
+  margin-top: 48px;
+  border-radius: 17px;
+  margin-left: 25px;
+}
+
+.duplas h2 {
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+  font-size: 24px;
+  color: #ffffffcf;
+}
+
+.input-right {
+  height: 20px;
+  border-radius: 9px;
+
+  text-align: center;
+  margin-left: 14px;
+  margin-top: 20px;
+  padding: 5px;
+  margin-right: 14px;
+}
+.input-left {
+  height: 20px;
+  border-radius: 9px;
+  margin-top: 20px;
+  margin-right: 14px;
+  margin-left: 14px;
+  padding: 5px;
+  text-align: center;
+}
+
+.puntos-score-games{
+  position: absolute;
+  color: white;
+  left: 10%;
+  font-size: 30px;
+  display: flex;
+  top: 30px;
+}
+.l-right-perdido{
+  color: red;
+   font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+}
+.r-left-ganados{
+  color: #008000de;
+    margin-right: 18px;
+     font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+}
+
+.jugadores {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+  color: #ffffff;
+  text-align: center;
+}
+.box-score-duplas{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
