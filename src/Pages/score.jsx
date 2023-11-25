@@ -63,16 +63,34 @@ const Score = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{
+      display: "inline-flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      height: "100vh"
+    }}>
       <div>
-        <h2>
+        <h2 style={{
+          textAlign: "center"
+        }}>
           Introduzca los jugadores que seran seleccionados para el Torneo!
         </h2>
       </div>
       {errorMessage ? errorMessage : ''}
+      <div style={{
+        display: "flex",
+        flexDirection:"column"
+      }}>
       {inputs.map((input, index) => (
         <>
-          <div>
+          <div style={{
+        display: "flex",
+        flexDirection:"column",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
             <span>{input.name}</span>
             <label htmlFor="">Jugador A</label>
             <input
@@ -85,7 +103,12 @@ const Score = () => {
             />
           </div>
 
-          <div>
+          <div style={{
+        display: "flex",
+        flexDirection:"column",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
             <label htmlFor="">Jugador B</label>
             <input
               onChange={(e) => handleChange(e, index, input)}
@@ -94,13 +117,13 @@ const Score = () => {
               value={input.jugador2}
               name={'jugador2'}
               type="text"
-            />
+              />
           </div>
         </>
       ))}
-      {}
+      </div>
       <button onClick={add}>Agregas mas Duplas</button>
-      <button onClick={send}>add</button>
+      <button onClick={send} >add</button>
     </div>
   );
 };
