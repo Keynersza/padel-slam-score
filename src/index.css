@@ -17,6 +17,7 @@ body {
   width: 290px;
   top: 10px;
 }
+
 .name-button h2 {
   font-family: 'Aspire SC Light Oblique';
   color: white;
@@ -24,14 +25,17 @@ body {
   margin: 0px;
   font-weight: 300;
 }
+
 .name-button {
   position: absolute;
   top: 88%;
   margin-left: 45px;
 }
+
 .name-two h2 {
   margin-left: 42px;
 }
+
 .puntos-left {
   font-family: 'Quartz MS';
   position: absolute;
@@ -40,6 +44,7 @@ body {
   top: 13%;
   font-size: 174px;
   color: white;
+  animation: puntoTop 1s ease-in;
 }
 
 .puntos-righ {
@@ -51,6 +56,7 @@ body {
   top: 57%;
   color: #def33c;
   font-size: 174px;
+  animation: puntoBut 1s ease-in;
 }
 
 .sets-buttom {
@@ -62,6 +68,7 @@ body {
   left: 734px;
   font-size: 80px;
 }
+
 .sets-top {
   font-family: 'Quartz MS';
   margin: 0px;
@@ -81,6 +88,7 @@ body {
   top: 127px;
   color: #8080804d;
 }
+
 .box-cancha {
   position: absolute;
   bottom: 137px;
@@ -89,6 +97,7 @@ body {
   transform: rotate(293deg);
   color: white;
 }
+
 .cancha {
   font-family: 'Aspire SC LIGHT OBLIQUE';
   margin: 0;
@@ -106,15 +115,41 @@ body {
   font-family: 'Aspire SC LIGHT OBLIQUE';
   src: url('Assets/fonts/AspireSCLightOblique-Regular.ttf'), format('ttf');
 }
+
 @font-face {
   font-family: 'Quartz MS';
   src: url('Assets/fonts/QuartzMSRegular.TTF'), format('ttf');
+}
+
+@keyframes puntoTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes puntoBut {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -125,50 +160,71 @@ body {
     opacity: 0;
     transform: translateX(-100px);
   }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes nameTop2 {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes ptsBut {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes timeTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
+
   100% {
     opacity: 1;
     transform: translate(0);
   }
 }
 
-/* container{
-  width: '100%',
-  height'100%',
-  position: 'absolute',
-  objectFit: 'fill',
-  objectPosition: 'center',
-  clipPath: 'polygon(0px 0px, 72% 0%, 41% 143%, 0% 100%)'
+@keyframes nameTop2 {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes ptsBut {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes timeTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes jugRight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* .container-tournament {
+
 } */
+.img-page-complete {
+  width: 100%;
+  height: 963px;
+  position: absolute;
+  object-fit: none;
+  object-position: center center;
+}
 
 .linea-top {
   border: 1px solid;
@@ -211,6 +267,7 @@ body {
   transform: skew(326deg, 360deg);
   padding: 1px;
 }
+
 .border-team-b p {
   font-family: 'Aspire SC LIGHT OBLIQUE';
   margin: 0;
@@ -239,6 +296,7 @@ body {
   color: #f82d9794;
   transform: skew(324deg, 360deg);
 }
+
 .box-1-botton {
   position: absolute;
   border: 15px solid;
@@ -247,6 +305,7 @@ body {
   color: #f82d97e0;
   transform: skew(391deg, 360deg);
 }
+
 .box-2-botton {
   position: absolute;
   border: 15px solid;
@@ -302,6 +361,7 @@ body {
   margin: 0px;
   box-shadow: 3px 0px 8px 1px #4f00ff;
 }
+
 .linea-buttom-buttom {
   width: 101px;
   border: 1px solid;
@@ -328,6 +388,7 @@ body {
   font-size: 66px;
   height: 90px;
 }
+
 .time p {
   margin: 0px;
   font-family: 'Quartz MS';
@@ -338,16 +399,19 @@ body {
   right: 0%;
   top: 30%;
 }
+
 .sets {
   display: flex;
   justify-content: space-around;
   margin-bottom: -5px;
   color: #ff00f5;
 }
+
 .sets p {
   font-family: 'Aspire SC LIGHT OBLIQUE';
   font-size: 23px;
 }
+
 .puntuacion-1 {
   display: flex;
   justify-content: space-around;
@@ -364,6 +428,7 @@ body {
   border-radius: 10px 0px 0px 10px;
   height: 78px;
 }
+
 .puntuacion-2 {
   margin-top: 20px;
   display: flex;
@@ -392,6 +457,7 @@ body {
   font-family: 'Quartz MS';
   margin: -8px;
 }
+
 .categoria {
   position: absolute;
   right: 745px;
@@ -401,6 +467,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .numero-categoria {
   font-size: 39px;
   font-family: 'Quartz MS';
@@ -414,6 +481,7 @@ body {
   font-weight: 900;
   color: #0f0ff3;
 }
+
 .message {
   border: 1px solid red;
 }
@@ -423,32 +491,35 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .tournament {
   display: flex;
-  justify-content: space-between;
-  background-image: url('./Assets/Recurso\ 3Fondo.png');
   height: 100vh;
-    background-size: contain;
-    background-repeat: round;
+  justify-content: center;
+  align-items: center;
 }
+
 .dupla-score {
   display: flex;
-  margin-bottom: 44px;
+  margin-bottom: 23px;
+  justify-content: center;
+  align-items: center;
 }
-.dupla-score h2{
-  color: white;
-}
+
 /* .jugadores-flex{
   display: flex;s
 } */
 
 .duplas {
   border: 1px solid rgba(160, 156, 156, 0.682);
-  box-shadow: inset 1px -1px 5px 0px #3a00eb;
-  padding: 1rem;
-  margin-top: 48px;
+  box-shadow: unset 1px -1px 5px 0px #4e05ffb5;
+  padding: 1px;
+  margin-top: 7px;
   border-radius: 17px;
-  margin-left: 25px;
+  width: 289px;
+  background: rgb(191 191 191 / 81%);
+  height: 205px;
+  opacity: 0.8;
 }
 
 .duplas h2 {
@@ -458,26 +529,36 @@ body {
 }
 
 .input-right {
-  height: 20px;
-  border-radius: 9px;
-
+  height: 60px;
+  border-radius: 14px;
+  padding: 18px;
   text-align: center;
-  margin-left: 14px;
-  margin-top: 20px;
-  padding: 5px;
-  margin-right: 14px;
+  width: 80px;
+  border: none;
+  font-size: 64px;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  margin-left: 45px;
+  background: #f82d97;
+  outline: none;
 }
+
 .input-left {
-  height: 20px;
-  border-radius: 9px;
-  margin-top: 20px;
-  margin-right: 14px;
-  margin-left: 14px;
-  padding: 5px;
+  height: 60px;
+  border-radius: 14px;
+  padding: 18px;
   text-align: center;
+  width: 80px;
+  border: none;
+  font-size: 64px;
+  color: #ffffff;
+  font-weight: bolder;
+  background: rgb(0, 48, 255);
+  background: linear-gradient(270deg, rgb(0 137 255) 14%, rgb(0 194 255) 90%);
+  outline: none;
 }
 
-.puntos-score-games{
+.puntos-score-games {
   position: absolute;
   color: white;
   left: 10%;
@@ -485,33 +566,961 @@ body {
   display: flex;
   top: 30px;
 }
-.l-right-perdido{
+
+.l-right-perdido {
   color: red;
-   font-size: 24px;
+  font-size: 50px;
   font-weight: 400;
   margin: 0;
-  font-family: 'Aspire SC LIGHT OBLIQUE';
+  font-family: 'Roboto', sans-serif;
 }
-.r-left-ganados{
-  color: #008000de;
-    margin-right: 18px;
-     font-size: 24px;
+
+.r-left-ganados {
+  color: #00d500e8;
+  margin-right: 18px;
+  font-size: 50px;
   font-weight: 400;
   margin: 0;
-  font-family: 'Aspire SC LIGHT OBLIQUE';
+  font-family: 'Roboto', sans-serif;
+}
+
+.jugadores-flex {
+  z-index: 1;
+  position: absolute;
+  right: 30px;
+  animation: jugRight 0.7s ease-in;
+  bottom: 8px;
 }
 
 .jugadores {
-  font-size: 24px;
-  font-weight: 400;
-  margin: 0;
-  font-family: 'Aspire SC LIGHT OBLIQUE';
+  font-size: 29px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
   color: #ffffff;
   text-align: center;
+  margin: 7px;
 }
-.box-score-duplas{
+
+.box-score-duplas {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 63px;
+  margin-top: 4px;
+}
+
+.dupla-right {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: -1px;
+}
+
+.dupla-left {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 0px;
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+  font-size: 14px;
+  width: 200px;
+}
+
+.players-color {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  margin: 7px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.players2-color {
+  font-family: 'Roboto', sans-serif;
+  margin: 7px;
+  color: rgb(0, 162, 255);
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.players2-right-color {
+  font-family: 'Roboto', sans-serif;
+  margin: 7px;
+  color: rgb(147 0 255);
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.button-groups {
+  transition: all 0.9s;
+  margin-top: 15px;
+  margin-left: 3%;
+  width: 43%;
+  height: 64px;
+  border-radius: 18px;
+  font-size: 15px;
+  border: none;
+  background: rgb(0, 48, 255);
+  background: linear-gradient(270deg, rgb(0 137 255) 14%, rgb(0 194 255) 90%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+  animation: jugRight 0.7s ease-in;
+  z-index: 100;
+}
+
+.button-groups:hover {
+  transform: scale(1.1);
+}
+
+.inputs-- {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-tor {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0 0 0);
+  margin-bottom: 6px;
+  margin-top: 106px;
+  font-weight: 700;
+}
+
+.win-lose {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+  color: rgb(255 255 255);
+  margin-top: 8px;
+}
+
+.win-lose p {
+  margin: 0px;
+  font-size: 31px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.look-game {
+  margin-left: 25px;
+  width: 100%;
+  height: 55px;
+  font-size: 15px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  background: rgb(0, 146, 255);
+  background: linear-gradient(
+    73deg,
+    rgba(0, 146, 255, 1) 0%,
+    rgba(0, 138, 255, 1) 54%,
+    rgba(0, 146, 255, 1) 100%
+  );
+  color: rgb(255, 255, 255);
+}
+
+.look-game:hover {
+  background: rgb(11, 110, 175);
+  background: linear-gradient(
+    270deg,
+    rgba(11, 110, 175, 1) 0%,
+    rgba(25, 136, 191, 1) 9%,
+    rgba(49, 180, 218, 1) 46%,
+    rgba(11, 110, 175, 1) 100%
+  );
+  color: white;
+}
+
+.groups_games {
+  width: 30%;
+  position: absolute;
+  display: inline-flex;
+  height: 84px;
+  margin-left: 10px;
+}
+
+.input-padel-score {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* .input-padel-score label {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0, 217, 255)
+}
+ */
+.input-padel-score input {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px solid rgb(114, 111, 111);
+  color: #38383899;
+  border-radius: 20px;
+  margin-left: 20px;
+  outline: none;
+}
+
+/* .input-padel-score input:focus {
+} */
+
+.name-dupla {
+  margin: 0;
+  text-align: center;
+  font-size: 41px;
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.add-duple {
+  width: 120px;
+  height: 52px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 13px;
+  font-size: 14px;
+  padding: 9px;
+  font-weight: 400;
+  cursor: pointer;
+  background: rgb(11, 110, 175);
+  background: linear-gradient(
+    270deg,
+    rgb(11 110 175 / 76%) 0%,
+    rgb(25 136 191 / 61%) 9%,
+    rgba(6, 150, 190, 0.56) 46%,
+    rgb(11 110 175 / 81%) 100%
+  );
+  color: rgba(255, 255, 255, 0.715);
+  transition: all 1s;
+  margin-left: 19px;
+}
+
+.add-duple:hover {
+  background: rgb(11, 110, 175);
+  background: linear-gradient(
+    270deg,
+    rgba(11, 110, 175, 1) 0%,
+    rgba(25, 136, 191, 1) 9%,
+    rgba(49, 180, 218, 1) 46%,
+    rgba(11, 110, 175, 1) 100%
+  );
+  color: white;
+  transition: all 1s;
+}
+.true {
+  border: 1px solid rgb(0, 255, 0) !important;
+}
+
+.players-a {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.players-b {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 30px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0, 217, 255);
+}
+
+.create-tournament {
+  width: 120px;
+  height: 52px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 13px;
+  font-size: 14px;
+  padding: 9px;
+  font-weight: 400;
+  cursor: pointer;
+  background: rgb(11, 110, 175);
+  background: linear-gradient(
+    270deg,
+    rgb(11 110 175 / 76%) 0%,
+    rgb(25 136 191 / 61%) 9%,
+    rgba(6, 150, 190, 0.56) 46%,
+    rgb(11 110 175 / 81%) 100%
+  );
+  color: rgba(255, 255, 255, 0.715);
+  transition: all 1s;
+  margin-left: 15px;
+}
+
+.create-tournament:hover {
+  background: rgb(11, 110, 175);
+  background: linear-gradient(
+    270deg,
+    rgba(11, 110, 175, 1) 0%,
+    rgba(25, 136, 191, 1) 9%,
+    rgba(49, 180, 218, 1) 46%,
+    rgba(11, 110, 175, 1) 100%
+  );
+  color: white;
+  transition: all 1s;
+}
+
+.message {
+  border: 1px solid red !important;
+}
+
+.error-message {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0px;
+  color: rgba(255, 0, 0, 0.648);
+}
+
+.loader {
+  width: 100px;
+  padding: 10px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 40%;
+  border-radius: 50%;
+  background: #15d7ba;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.create-duple-tournament {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-image: url('./Assets/fond-padel.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+.title-create-tournament {
+  font-size: 27px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 46px;
+}
+.lipl h1 {
+  font-size: 57px;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background: -webkit-linear-gradient(#ff008d, #005aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fond-padel {
+  width: 335px;
+  object-position: center;
+  object-fit: cover;
+  height: 114px;
+}
+
+.fond-padel-games {
+  width: 100%;
+  object-fit: cover;
+  height: 797px;
+  /* position: absolute; */
+  object-position: center;
+}
+
+.games-players-score {
+  z-index: 1;
+  position: absolute;
+  left: 27%;
+}
+
+.button-side {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+
+.container-header {
+  display: block;
+}
+
+.ul-header {
+  width: 16%;
+  padding: 8px;
+}
+/* .contenedor-box-inputs{
+    position: absolute;
+    top: 40%;
+    overflow: hidden;
+  } */
+.contenedor {
+  width: 546px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 8%;
+  list-style: none;
+  font-size: 20px;
+  color: rgb(166, 164, 164);
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+.contenedor li:hover {
+  color: rgb(83 82 82);
+  border-bottom: inset #292828 2px;
+}
+
+.container-box-pts-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-box-pts-score h1 {
+  font-family: 'Roboto', sans-serif;
+}
+.box-pt-st {
+  display: flex;
+  position: absolute;
+  top: 1%;
+  gap: 29px;
+  right: 44%;
+}
+.box-pt-st p {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.box-pt-st-bot {
+  display: flex;
+  position: absolute;
+  top: 8%;
+  gap: 29px;
+  right: 44%;
+}
+.box-botton-pts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 54px;
+}
+.box-botton-pts h2{
+  font-size: 30px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  }
+.color-pts-but{
+ color: #008cff;
+}
+.color-set-but{
+  color: #3a00eb;
+}
+.box-botton-pts button {
+  width: 50px;
+  height: 50px;
+  font-size: 39px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  background-color: #008cff;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .jugadores-open {
+    position: fixed;
+    top: 0px;
+    background-color: black;
+    width: 70%;
+    left: 0px;
+    margin: 0px;
+    height: 100vh;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0.8;
+    animation: jugRight 0.7s ease-in;
+  }
+
+  .flex-on {
+    display: block;
+    background-color: #000000ed;
+  }
+
+  .flex-off {
+    display: none;
+  }
+
+  .dupla-score {
+    display: flex;
+    margin-bottom: 55px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    width: 0px;
+  }
+
+  .dupla-left {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 0px;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 8px;
+  }
+
+  .dupla-left h2 {
+    color: white;
+    margin: 0px;
+    width: 67px;
+  }
+
+  .input-left {
+    height: 22px;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    width: 25px;
+    border: none;
+    font-size: 45px;
+    color: #3a3838d6;
+    font-weight: bolder;
+  }
+
+  .dupla-right {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 0px;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 8px;
+  }
+
+  .dupla-right h2 {
+    color: white;
+    margin: 0px;
+    width: 67px;
+  }
+
+  .input-right {
+    height: 22px;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    width: 25px;
+    border: none;
+    font-size: 45px;
+    color: #3a3838d6;
+    font-weight: bolder;
+    margin-left: 30px;
+  }
+
+  .duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: inset 1px -1px 5px 0px #3a00eb;
+    padding: 0px;
+    margin-top: 31px;
+    border-radius: 13px;
+    height: 200px;
+  }
+
+  .group-tor {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 21px;
+    margin-left: -49px;
+  }
+
+  .win-lose {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    color: white;
+    margin-top: 7px;
+  }
+
+  .win-lose p {
+    margin: 0px;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+  }
+
+  .jugadores {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    color: #ffffff;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .look-game {
+    margin-left: 16px;
+    width: 100%;
+    height: 55px;
+    font-size: 9px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background: rgb(11, 110, 175);
+    background: linear-gradient(
+      270deg,
+      rgb(11 110 175 / 76%) 0%,
+      rgb(25 136 191 / 61%) 9%,
+      rgb(49 180 218 / 56%) 46%,
+      rgb(11 110 175 / 81%) 100%
+    );
+    color: rgba(255, 255, 255, 0.715);
+  }
+
+  .games-players-score {
+    z-index: 1;
+    margin-top: 10%;
+  }
+
+  .button-side {
+    display: flex;
+    width: 76px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 19px;
+    border-radius: 17px;
+    border: none;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    background: rgb(4, 129, 212);
+    background: linear-gradient(
+      270deg,
+      rgb(11 110 175 / 76%) 0%,
+      rgb(25 136 191 / 61%) 9%,
+      rgb(49 180 218 / 56%) 46%,
+      rgb(11 110 175 / 81%) 100%
+    );
+    color: rgba(255, 255, 255, 0.715);
+  }
+
+  .button-side:hover {
+    background: rgb(11, 110, 175);
+    background: linear-gradient(
+      270deg,
+      rgba(11, 110, 175, 1) 0%,
+      rgba(25, 136, 191, 1) 9%,
+      rgba(49, 180, 218, 1) 46%,
+      rgba(11, 110, 175, 1) 100%
+    );
+    color: white;
+    transition: all 1s;
+  }
+
+  .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    /* margin-left: 1%; */
+    width: 57%;
+    height: 49px;
+    border-radius: 18px;
+    font-size: 12px;
+    border: none;
+    background: rgb(11, 110, 175);
+    background: linear-gradient(
+      270deg,
+      rgb(11 110 175 / 76%) 0%,
+      rgb(25 136 191 / 61%) 9%,
+      rgb(49 180 218 / 56%) 46%,
+      rgb(11 110 175 / 81%) 100%
+    );
+    color: rgba(255, 255, 255, 0.715);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+  }
+
+  .groups_games {
+    width: 81%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+  }
+}
+
+@media (max-width: 456px) {
+  .jugadores-open {
+    position: fixed;
+    top: 0px;
+    background-color: black;
+    width: 70%;
+    left: 0px;
+    margin: 0px;
+    height: 100vh;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0.8;
+    animation: jugRight 0.7s ease-in;
+  }
+
+  .flex-on {
+    display: block;
+    background-color: #000000ed;
+  }
+
+  .flex-off {
+    display: none;
+  }
+
+  .dupla-score {
+    display: flex;
+    margin-bottom: 55px;
+    justify-content: center;
+    align-items: center;
+    width: 0px;
+  }
+
+  .dupla-left {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 0px;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 8px;
+  }
+
+  .players-color {
+    font-family: 'Roboto', sans-serif;
+    color: black !important;
+    margin: 7px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100px !important;
+  }
+
+  .players2-color {
+    font-family: 'Roboto', sans-serif;
+    margin: 7px;
+    color: rgb(88, 17, 139) !important;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100px !important;
+  }
+
+  .input-left {
+    height: 22px;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    width: 25px;
+    border: none;
+    font-size: 45px;
+    color: #3a3838d6;
+    font-weight: bolder;
+  }
+
+  .dupla-right {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 0px;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 8px;
+  }
+
+  .input-right {
+    height: 22px;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    width: 25px;
+    border: none;
+    font-size: 45px;
+    color: #3a3838d6;
+    font-weight: bolder;
+    margin-left: 30px;
+  }
+
+  .duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: inset 1px -1px 5px 0px #3a00eb;
+    padding: 0px;
+    margin-top: 11px;
+    border-radius: 13px;
+    height: 200px;
+    margin-left: 12px;
+  }
+
+  .group-tor {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 21px;
+    margin-left: -49px;
+  }
+
+  .win-lose {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    color: white;
+    margin-top: 7px;
+  }
+
+  .win-lose p {
+    margin: 0px;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+  }
+
+  .jugadores {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    color: #ffffff;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .look-game {
+    margin-left: 16px;
+    width: 100%;
+    height: 55px;
+    font-size: 9px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background: rgb(11, 110, 175);
+    background: linear-gradient(
+      270deg,
+      rgb(11 110 175 / 76%) 0%,
+      rgb(25 136 191 / 61%) 9%,
+      rgb(49 180 218 / 56%) 46%,
+      rgb(11 110 175 / 81%) 100%
+    );
+    color: rgba(255, 255, 255, 0.715);
+  }
+
+  .games-players-score {
+    z-index: 1;
+    margin-top: 10%;
+    margin-left: 32px;
+  }
+
+  .button-side {
+    display: flex;
+    width: 76px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 19px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    background: rgb(4, 129, 212);
+    background: linear-gradient(
+      270deg,
+      rgb(11 110 175 / 76%) 0%,
+      rgb(25 136 191 / 61%) 9%,
+      rgb(49 180 218 / 56%) 46%,
+      rgb(11 110 175 / 81%) 100%
+    );
+    color: rgba(255, 255, 255, 0.715);
+    margin-right: 18px;
+  }
+
+  .button-side:hover {
+    background: rgb(11, 110, 175);
+    background: linear-gradient(
+      270deg,
+      rgba(11, 110, 175, 1) 0%,
+      rgba(25, 136, 191, 1) 9%,
+      rgba(49, 180, 218, 1) 46%,
+      rgba(11, 110, 175, 1) 100%
+    );
+    color: white;
+    transition: all 1s;
+  }
+
+  .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    /* margin-left: 1%; */
+    width: 45%;
+    height: 51px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: none;
+    background: rgb(49, 0, 117);
+    background: linear-gradient(
+      90deg,
+      rgba(49, 0, 117, 1) 0%,
+      rgb(61 1 97 / 82%) 50%,
+      rgb(118 1 153) 86%
+    );
+    color: rgba(255, 255, 255, 0.715);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+  }
+
+  .groups_games {
+    width: 70%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+  }
+
+  .img-witdh {
+    width: 100%;
+    height: 867px;
+    position: absolute;
+    object-fit: none;
+    object-position: center center;
+  }
 }

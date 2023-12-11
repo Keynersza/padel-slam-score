@@ -3,21 +3,33 @@ import imagen from '../Assets/Recurso 3Fondo.png';
 import logo from '../Assets/OriginalLogo.png'
 import icono from '../Assets/arreglo-raqueta.jpg';
 import vs from '../Assets/IconVS.png';
-import { Loading } from '../Components/loading';
+import {useParams} from 'react-router-dom'
+import { useGameStore } from '../Components/Torneo/hooks.ts';
+import BotonControllers from '../Controllers/bottonController.js';
 const Score2 = () => {
- 
+ const {sumarPunt} = BotonControllers()
+ console.log("hola",sumarPunt);
+  const {torneo} = useGameStore()
+  const [gameScore, setGameScore] = useState([])
+  const [ressult, setRessult] = useState(0)
+  const {id} = useParams()
+  let puntosGruops1 = localStorage.getItem("puntos")
+  let puntosGroups2 = localStorage.getItem("puntosGruops2")
+  let setTop = localStorage.getItem("setsTop")
+  let setBot = localStorage.getItem("setsBot")
   
-
-  /*  const [first, setfirst] = useState(false)
-         useEffect(() => {
-             setfirst(true)
-     
-             setTimeout(() => {
-                 setfirst(false)
-             }, 2000);
-     
-         }, []) */
-
+  const filterGame = () =>{
+    let game = 
+    torneo?.groups[0]?.games.filter((element) => element.id === id)
+    setGameScore(game) 
+  }
+  /* if (puntos == 40) {
+   return set + 1
+  } */
+  useEffect(() => {
+  filterGame()
+  }, [])
+  
   return (
     <div>
       <div className="container">
@@ -32,14 +44,19 @@ const Score2 = () => {
             clipPath: 'polygon(0px 0px, 72% 0%, 41% 143%, 0% 100%)',
           }}
         />
-        <div className="name-two">
-          <h2>JULIO Y</h2>
-          <h2>KENNY S</h2>
+        {gameScore.map((juego) => (
+          <>
+          <div className="name-two">
+          <h2>{juego.left.jugador1}</h2>
+          <h2>{juego.left.jugador2}</h2>
         </div>
         <div className="name-button">
-          <h2>JESUS S</h2>
-          <h2>JOANGEL R</h2>
+          <h2>{juego.right.jugador1}</h2>
+          <h2>{juego.right.jugador2}</h2>
         </div>
+          
+        
+      
         <img src = {vs} style={{
            position: 'absolute',
            width: '137px',
@@ -47,8 +64,8 @@ const Score2 = () => {
            left: "11%"
         }}/>
         <div className="puntos-partida">
-          <h1 className="puntos-left">15</h1>
-          <h1 className="puntos-righ">30</h1>
+          <h1 className="puntos-left">{puntosGruops1}</h1>
+          <h1 className="puntos-righ">{puntosGroups2}</h1>
         </div>
         <div className="border-team-b">
           <p>Equipo A</p>
@@ -61,9 +78,12 @@ const Score2 = () => {
           <p>Equipo B</p>
         </div>
         <div className="sets-partida">
-          <h1 className="sets-top">3</h1>
-          <h1 className="sets-buttom">3</h1>
+          <h1 className="sets-top">{setTop}</h1>
+          <h1 className="sets-buttom">{setBot}</h1>
         </div>
+        </>
+          )
+          )}
         <h2 className="linea-top"></h2>
         <h2 className="linea-rotate"></h2>
         <h2 className="linea-buttom"></h2>

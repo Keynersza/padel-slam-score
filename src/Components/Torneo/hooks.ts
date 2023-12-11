@@ -66,7 +66,7 @@ class Tournament<T> {
 }
 
 function getGroups<T>(L: T[], G: number, W: number) {
-  if (L.length != 8) throw 'Bad G&L';
+ /*  if (L.length != 8) throw 'Bad G&L'; */
   return new Tournament(L, G, W);
 }
 
@@ -83,8 +83,8 @@ export const useGameStore = create((set) => ({
     if (data) {
       let torneo = getGroups(
         data.map((i) => i),
-        2,
-        4
+        3,
+        12
       );
       set((state) => ({
         torneo,

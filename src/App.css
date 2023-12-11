@@ -1,0 +1,9 @@
+.create-duple-tournament{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-image: url("./Assets/fond-padel.png");
+}
