@@ -12,12 +12,12 @@ const Nav = ({open}) => {
       <li>Games</li>
       <li>Record</li>
       <li>Contacto</li>
-     
-    </div>
-    <div className='contenedor-login'>
+      <div className='contenedor-login'>
         <li>Sign In</li>
         <li>Sign Up</li>
       </div>
+    </div>
+   
     </ul>
    </div>
   )
