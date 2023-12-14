@@ -7,7 +7,7 @@ import logoPadel from '../Assets/OriginalLogo.png';
 const Tournament = () => {
   const [group, setGroup] = useState(0);
   const [group1, setGroup1] = useState(1);
- /*  const [group2, setGroup2] = useState(2); */
+  /*  const [group2, setGroup2] = useState(2); */
   const [open, setOpen] = useState(false);
   const [render, setRender] = useState(Number);
   const { torneo, updateGames } = useGameStore();
@@ -15,40 +15,46 @@ const Tournament = () => {
 
   const handleChange = (e, index) => {
     tournament.groups[group].games[index][e.target.name] = +e.target.value;
-    let playerName =
+    let playerLeftScore =
       e.target.name === 'leftScore'
-        ? tournament.groups[group].games[index].right.jugador1 &&
-          tournament.groups[group].games[index].right.jugador2
-        : tournament.groups[group].games[index].left.jugador1 &&
-          tournament.groups[group].games[index].left.jugador2;
+        ? tournament.groups[group].games[index].right.name
+        : tournament.groups[group].games[index].left.name
 
+    let playerRightScore =
+      e.target.name === 'rightScore'
+        ? tournament.groups[group].games[index].left.name
+        : tournament.groups[group].games[index].right.name
     for (let i = 0; i < tournament.groups[group].players.length; i++) {
       if (
-        tournament.groups[group].players[i].jugador1 &&
-        tournament.groups[group].players[i].jugador2 === playerName
+        tournament.groups[group].players[i].name === playerLeftScore
       ) {
-        tournament.groups[group].players[i].win = calculateWin(playerName);
-        tournament.groups[group].players[i].lose = calculateLose(playerName);
+        tournament.groups[group].players[i].win = calculateWin(playerLeftScore);
+      }
+      if (
+        tournament.groups[group].players[i].name === playerRightScore
+      ) {
+        tournament.groups[group].players[i].lose =
+          calculateLose(playerRightScore);
       }
     }
     setTournament({ ...tournament });
     updateGames(tournament);
   };
-  const calculateWin = (jugadores) => {
+  const calculateWin = (name) => {
     return tournament?.groups[group]?.games?.reduce((pv, cv) => {
-      if (cv.left.jugador1 && cv.left.jugador2 === jugadores)
+      if (cv.left.name === name)
+        return pv + cv.rightScore ;
+      if (cv.right.name === name)
         return pv + cv.leftScore;
-      if (cv.right.jugador1 && cv.right.jugador2 === jugadores)
-        return pv + cv.rightScore;
       return pv;
     }, 0);
   };
 
-  const calculateLose = (jugadores) => {
+  const calculateLose = (name) => {
     return tournament?.groups[group]?.games?.reduce((pv, cv) => {
-      if (cv.left.jugador1 && cv.left.jugador2 === jugadores)
+      if (cv.left.name === name )
         return pv + cv.rightScore;
-      if (cv.right.jugador1 && cv.right.jugador2 === jugadores)
+      if (cv.right.name === name)
         return pv + cv.leftScore;
       return pv;
     }, 0);
@@ -58,10 +64,10 @@ const Tournament = () => {
     tournament.groups[group1].games[index][e.target.name] = +e.target.value;
     let playerName =
       e.target.name === 'leftScore'
-        ? tournament.groups[group1].games[index].left.jugador1 &&
-          tournament.groups[group1].games[index].left.jugador2
-        : tournament.groups[group1].games[index].right.jugador1 &&
-          tournament.groups[group1].games[index].right.jugador2;
+        ? tournament.groups[group1].games[index].right.jugador1 &&
+          tournament.groups[group1].games[index].right.jugador2
+        : tournament.groups[group1].games[index].left.jugador1 &&
+          tournament.groups[group1].games[index].left.jugador2;
 
     for (let i = 0; i < tournament.groups[group1].players.length; i++) {
       if (
@@ -98,7 +104,7 @@ const Tournament = () => {
     }, 0);
   };
 
-/*   const handleChange3 = (e, index) => {
+  /*   const handleChange3 = (e, index) => {
     tournament.groups[group2].games[index][e.target.name] = +e.target.value;
     let playerName =
       e.target.name === 'leftScore'
@@ -148,7 +154,7 @@ const Tournament = () => {
     return setRender(group1);
   };
 
-/*   const changedGroup3 = () => {
+  /*   const changedGroup3 = () => {
     setRender(group2);
     console.log('group2 :>> ', group2);
   }; */
@@ -183,11 +189,11 @@ const Tournament = () => {
         <button onClick={changedGroup2} className="button-groups">
           Grupo B
         </button>
-       {/*  <button onClick={changedGroup3} className="button-groups">
+        {/*  <button onClick={changedGroup3} className="button-groups">
           Grupo C
         </button> */}
       </div>
-      <h1 className='separador-responsive separador'></h1>
+      <h1 className="separador-responsive separador"></h1>
       {/* if(render == 1 || render == 2  && render == 3){
 
 } */}
@@ -257,10 +263,10 @@ const Tournament = () => {
                     />
 
                     <div className="dupla-right">
-                      <h2 className="players-right-color">{juegos.right.jugador1}</h2>
-                      <h2 className="players-color">
-                        {juegos.right.jugador2}
+                      <h2 className="players-right-color">
+                        {juegos.right.jugador1}
                       </h2>
+                      <h2 className="players-color">{juegos.right.jugador2}</h2>
                     </div>
                   </div>
                 </>
@@ -328,10 +334,10 @@ const Tournament = () => {
                     />
 
                     <div className="dupla-right">
-                      <h2 className="players-right-color">{juegos.right.jugador1}</h2>
-                      <h2 className="players-color">
-                        {juegos.right.jugador2}
+                      <h2 className="players-right-color">
+                        {juegos.right.jugador1}
                       </h2>
+                      <h2 className="players-color">{juegos.right.jugador2}</h2>
                     </div>
                   </div>
                 </>
@@ -409,7 +415,7 @@ const Tournament = () => {
               ))}
             </div>
           </>
-        )} */} 
+        )} */}
       </div>
     </div>
   );

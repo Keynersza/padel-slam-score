@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../Assets/BlancoLogo.png';
 import { useGameStore } from '../Components/Torneo/hooks.ts';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import raquetaPadel from '../Assets/5590013.png';
-import pala from '../Assets/pala.png';
+import players from '../Assets/748.jpg';
+import icon1 from '../Assets/IconImg/icons8-facebook-como-piel-tipo-1-100.png';
+import icon2 from '../Assets/IconImg/icons8-entradas-100.png'
+import icon3 from '../Assets/IconImg/icons8-trofeo-96.png';
 import playerFond from '../Assets/tennispadel.png';
 import { Loading } from '../Components/loading.jsx';
 import Nav from '../Components/Navegation/nav.jsx';
@@ -142,11 +143,46 @@ const Score = () => {
             <p>Únete a las millones de personas que confían en Padel Slam para administrar sus torneos</p>
             <button>Ver</button>
             </div>
-         {/*    <img src={pala} style={{
-              width: "150px"
-            }}/> */}
+
+       
             <img src={playerFond} className='img-mini-header'/>
           </div>
+          
+          <div className='card-container'>
+            <img src={players} className='img-card-container' />
+              <div className='like-padel-slam'>
+                <img src={icon1} style={{
+                  width: "100px"
+                }}/>
+                <div>
+              <h3>Me gusta Padel Slam Tournarments!</h3>
+              <p>
+                A miles de Personas le parecieron maravillosa nuestra compañia y viven una experiencia increible con Padel Slam Tournaments!  
+              </p>
+                </div>
+              </div>
+              <div className='boleto-padel-slam'>
+                <img src={icon2} style={{
+                  width: "100px"
+                }}/>
+              <div>
+                <h3>No te pierdas los Torneos de Padel Slam!</h3>
+                <p>Puedes ponerte comodo y disfrutar los grandes juegos de Padel Slam desde tu casa.
+                No dudes en pedir tus entradas!
+                 </p>
+              </div>
+              </div>
+              <div className='trofeo-padel-slam'>
+                <img src={icon3} style={{
+                  width: "100px"
+                }}/>
+              <div>
+                <h3>Participa en Torneos Padel Slam</h3>
+                <p>Comienza a vivir una experiencia de Torneos Padel Slam, no te vas arrepentir de esta gran experiencia!</p>
+                <button>Crear Torneo</button>
+              </div>
+              </div>
+            </div>
             <h2 className="title-create-tournament" id='title'>
               Enter the players who will be selected for the Tournament!
             </h2>
