@@ -7,7 +7,7 @@ const BotonControllers = () => {
    const [sumarBotScore, setSumarBotScore] = useState(0)
    const [sumarBut, setSumarBut] = useState(0)
    const { torneo } = useGameStore()
-   /*  let topScore = torneo?.groups[0]?.games[0]?.leftScore */
+    let topScore = torneo?.groups[0]?.games[0]?.leftScore 
 
    const sumarPunt = () => {
 
@@ -20,6 +20,8 @@ const BotonControllers = () => {
          } else {
             setSumarTopScore(sumarTopScore + 1)
             localStorage.setItem("setsTop", sumarTopScore + 1)
+            topScore = sumarTopScore + 1 
+            console.log("hola", topScore);
          }
          return
       } else if (sumarGroups1 === 30) {
@@ -78,7 +80,8 @@ const BotonControllers = () => {
       sumarBotScore,
       sumarBut,
       sumarGroups2,
-      restarGroups2
+      restarGroups2,
+      topScore
    }
 }
 

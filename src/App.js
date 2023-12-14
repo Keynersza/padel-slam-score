@@ -1,5 +1,5 @@
 
-import Score from './Pages/score';
+import Score from './Pages/createDuplas.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Score2 from './Pages/score2,';
 import { useState } from 'react';

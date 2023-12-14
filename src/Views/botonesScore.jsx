@@ -3,7 +3,7 @@ import BotonControllers from '../Controllers/bottonController'
 import Score2 from '../Pages/score2,'
 
 const BotonesScore = () => {
-    const {sumarPunt, restarPunt, sumarGroups1, sumarTopScore, sumarBotScore, sumarBut, sumarGroups2, restarGroups2} = BotonControllers()
+    const {sumarPunt, restarPunt, sumarGroups1, sumarTopScore, sumarBotScore, sumarBut, sumarGroups2, restarGroups2, topScore} = BotonControllers()
     if (sumarGroups1) {
         localStorage.setItem("puntos", sumarGroups1)
        
@@ -12,7 +12,7 @@ const BotonesScore = () => {
          
     }
    
-
+    console.log(topScore);
 
     if (sumarGroups2) {
       localStorage.setItem("puntosGruops2", sumarBut)

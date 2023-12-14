@@ -6,12 +6,12 @@ import vs from '../Assets/IconVS.png';
 import {useParams} from 'react-router-dom'
 import { useGameStore } from '../Components/Torneo/hooks.ts';
 import BotonControllers from '../Controllers/bottonController.js';
+import pltPadel from '../Assets/pelota.png'
 const Score2 = () => {
  const {sumarPunt} = BotonControllers()
  console.log("hola",sumarPunt);
   const {torneo} = useGameStore()
   const [gameScore, setGameScore] = useState([])
-  const [ressult, setRessult] = useState(0)
   const {id} = useParams()
   let puntosGruops1 = localStorage.getItem("puntos")
   let puntosGroups2 = localStorage.getItem("puntosGruops2")
@@ -54,7 +54,6 @@ const Score2 = () => {
           <h2>{juego.right.jugador1}</h2>
           <h2>{juego.right.jugador2}</h2>
         </div>
-          
         
       
         <img src = {vs} style={{
@@ -69,6 +68,19 @@ const Score2 = () => {
         </div>
         <div className="border-team-b">
           <p>Equipo A</p>
+        </div>
+        <div>
+          <img src={pltPadel} 
+          style={{
+            position: 'absolute',
+            width: "65px",
+            objectPosition: "Center",
+            objectFit:"cover",
+            left: "38%",            
+            bottom: "21%"
+          }}
+          />
+       
         </div>
         <div className="box-1-top"></div>
         <div className="box-2-top"></div>

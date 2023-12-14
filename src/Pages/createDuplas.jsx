@@ -3,10 +3,13 @@ import logo from '../Assets/BlancoLogo.png';
 import { useGameStore } from '../Components/Torneo/hooks.ts';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import fondPadel from '../Assets/748.jpg';
+import raquetaPadel from '../Assets/5590013.png';
+import pala from '../Assets/pala.png';
+import playerFond from '../Assets/tennispadel.png';
 import { Loading } from '../Components/loading.jsx';
 import Nav from '../Components/Navegation/nav.jsx';
 import SwipeAuto from '../Components/Swipers/SwipeAuto.jsx';
+import Footer from '../Components/Footer/footer.jsx';
 const Score = () => {
   const [inputs, setInputs] = useState([
     {
@@ -18,6 +21,7 @@ const Score = () => {
     },
   ]);
 
+  const [open, setOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -63,7 +67,6 @@ const Score = () => {
       setError(true);
       setErrorTrue(false);
     }
-
     return;
   };
 
@@ -71,13 +74,13 @@ const Score = () => {
     e.preventDefault();
     setLoading(true);
     let validateInputs = [...inputs];
-    if (validateInputs.length < 2) {
+    if (validateInputs.length < 8) {
       setTimeout(() => {
         setLoading(false);
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Minimo 4 Personas!',
+          text: 'Minimo 8 Duplas!',
           footer: '<a href="#">Why do I have this issue?</a>',
         });
       }, 1000);
@@ -99,6 +102,12 @@ const Score = () => {
       }, 2000);
     }
   };
+  const sideVar = () => {
+    setOpen(!open);
+    /*   if (!open) {
+      
+    } */
+  };
 
   /*  useEffect(() => {
     setTimeout(() => {
@@ -116,7 +125,10 @@ const Score = () => {
   return (
     <>
       <header>
-        <Nav />
+        <Nav open={open} />
+        <button className="menu-responsive" onClick={() => sideVar()}>
+          Menu
+        </button>
       </header>
       <div className="create-duple-tournament">
         {/*  <img src={fondPadel} className='fond-padel-games' />  */}
@@ -124,19 +136,25 @@ const Score = () => {
           <Loading />
         ) : (
           <>
-            <SwipeAuto />
-            <div className="lipl">
-              <h1>
-              Welcome to Padel Slam Tournaments
-              </h1>
-              <h2 className="title-create-tournament">
-                Enter the players who will be selected for the Tournament!
-              </h2>
+          <div className='container-mini-header'>
+            <div className='box-con'>
+            <h2>Bienvenido a Torneos Padel Slam </h2>
+            <p>Únete a las millones de personas que confían en Padel Slam para administrar sus torneos</p>
+            <button>Ver</button>
             </div>
+         {/*    <img src={pala} style={{
+              width: "150px"
+            }}/> */}
+            <img src={playerFond} className='img-mini-header'/>
+          </div>
+            <h2 className="title-create-tournament" id='title'>
+              Enter the players who will be selected for the Tournament!
+            </h2>
             <div
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
+                alignItems: 'center',
                 justifyContent: 'center',
               }}
               className="contenedor-box-inputs"
@@ -175,24 +193,35 @@ const Score = () => {
                   </div>
                 </>
               ))}
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'relative',
-                  top: '45px',
-                }}
-              >
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <>
                 <button onClick={add} className="add-duple">
                   Agregar Dupla
                 </button>
+              </>
+              {inputs.length >= 8 ? (
                 <button onClick={send} className="create-tournament">
                   Crear Torneo
                 </button>
-              </div>
+              ) : (
+                ''
+              )}
             </div>
+            {/*    <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <footer>
+        <Footer />
+      </footer> */}
           </>
         )}
       </div>

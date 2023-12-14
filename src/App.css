@@ -1,9 +1,33 @@
-.create-duple-tournament{
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100vh;
-        background-image: url("./Assets/fond-padel.png");
-}
+/* <div>
+                  <div>
+                    <h4>Multiples Torneos en Uno</h4>
+                    <span>
+                      Tienes una convención con múltiples torneos? Administrelos
+                      todos en una sola página de evento.
+                    </span>
+                  </div>
+                  <div>
+                    <h4>Venta de Entradas</h4>
+                    <span>
+                      Desde la entrada hasta las entradas de inscripción al
+                      torneo.
+                    </span>
+                  </div>
+                  <div>
+                  <h4>Seguimiento de la actividad de su evento</h4>
+                    <span>
+                    Realice un seguimiento de las ventas, visitas y pedidos con su panel de gestión de eventos
+                    </span>
+                  </div>
+                </div> 
+                
+                <div className="box-ev">
+                <h3> Crea paginas de Eventos Para tus convenciones</h3>
+                <span>
+                  ¿Tienes un evento con múltiples torneos? Te tenemos. Utilice
+                  la función de eventos de Padel Slam
+                </span>
+                
+              </div>
+                
+                */

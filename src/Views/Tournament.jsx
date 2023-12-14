@@ -7,7 +7,7 @@ import logoPadel from '../Assets/OriginalLogo.png';
 const Tournament = () => {
   const [group, setGroup] = useState(0);
   const [group1, setGroup1] = useState(1);
-  const [group2, setGroup2] = useState(2);
+ /*  const [group2, setGroup2] = useState(2); */
   const [open, setOpen] = useState(false);
   const [render, setRender] = useState(Number);
   const { torneo, updateGames } = useGameStore();
@@ -98,7 +98,7 @@ const Tournament = () => {
     }, 0);
   };
 
-  const handleChange3 = (e, index) => {
+/*   const handleChange3 = (e, index) => {
     tournament.groups[group2].games[index][e.target.name] = +e.target.value;
     let playerName =
       e.target.name === 'leftScore'
@@ -139,7 +139,7 @@ const Tournament = () => {
       return pv
     }, 0);
   };
-
+ */
   const changedGroup = () => {
     return setRender(group);
   };
@@ -148,10 +148,10 @@ const Tournament = () => {
     return setRender(group1);
   };
 
-  const changedGroup3 = () => {
+/*   const changedGroup3 = () => {
     setRender(group2);
     console.log('group2 :>> ', group2);
-  };
+  }; */
 
   const sideVar = () => {
     setOpen(!open);
@@ -166,7 +166,7 @@ const Tournament = () => {
     setTournament(tournament);
     setGroup(group);
     setGroup1(group1);
-    setGroup2(group2);
+    /* setGroup2(group2); */
     /* setbuttomRender() */
   }, [tournament]);
 
@@ -183,19 +183,11 @@ const Tournament = () => {
         <button onClick={changedGroup2} className="button-groups">
           Grupo B
         </button>
-        <button onClick={changedGroup3} className="button-groups">
+       {/*  <button onClick={changedGroup3} className="button-groups">
           Grupo C
-        </button>
+        </button> */}
       </div>
-      <h1
-        style={{
-          margin: '0px',
-          position: 'absolute',
-          top: '88px',
-          border: '1px solid #80808021',
-          width: '1918px',
-        }}
-      ></h1>
+      <h1 className='separador-responsive separador'></h1>
       {/* if(render == 1 || render == 2  && render == 3){
 
 } */}
@@ -265,8 +257,8 @@ const Tournament = () => {
                     />
 
                     <div className="dupla-right">
-                      <h2 className="players-color">{juegos.right.jugador1}</h2>
-                      <h2 className="players2-right-color">
+                      <h2 className="players-right-color">{juegos.right.jugador1}</h2>
+                      <h2 className="players-color">
                         {juegos.right.jugador2}
                       </h2>
                     </div>
@@ -336,8 +328,8 @@ const Tournament = () => {
                     />
 
                     <div className="dupla-right">
-                      <h2 className="players-color">{juegos.right.jugador1}</h2>
-                      <h2 className="players2-right-color">
+                      <h2 className="players-right-color">{juegos.right.jugador1}</h2>
+                      <h2 className="players-color">
                         {juegos.right.jugador2}
                       </h2>
                     </div>
@@ -347,7 +339,7 @@ const Tournament = () => {
             </div>
           </>
         )}
-        {render == 2 && (
+        {/* {render == 2 && (
           <>
             <div
               className={
@@ -366,7 +358,7 @@ const Tournament = () => {
                         <p>Lose</p>
                       </div>
                       <div className="box-score-duplas">
-                        {/* <h2>{jug.name} </h2> */}
+                       
                         <p className="r-left-ganados">{jug.win}</p>
                         <p className="l-right-perdido">{jug.lose}</p>
                       </div>
@@ -417,7 +409,7 @@ const Tournament = () => {
               ))}
             </div>
           </>
-        )}
+        )} */} 
       </div>
     </div>
   );

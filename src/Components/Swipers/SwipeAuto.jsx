@@ -21,25 +21,26 @@ const SwipeAuto = () => {
       modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
       slidesPerView={1}
       autoplay={{
-        delay: 2500,
+        delay: 2555555555555555555555555,
         disableOnInteraction: false,
       }}
       onSwiper={(swiper) => console.log(swiper)}
      /*  onSlideChange={() => console.log('slide change')} */
       loop = {true}
-      style={{
+      className='responsive swipers-dinamic'
+     /*  style={{
         height: "726px",
         width :"100%"
-      }}
+      }} */
     >
     {arrayimg.map((img, index) => (
       <SwiperSlide key={index} >
-      <img src={img} style={{
+      <img src={img} /* style={{
         width: "100%",
         height: "877px",
         objectFit: "cover",
         objectPosition: "center"
-      }} />
+      }} */ className='responsive-img swiper-img' />
     </SwiperSlide>
     ))}
     </Swiper>

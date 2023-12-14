@@ -83,8 +83,8 @@ export const useGameStore = create((set) => ({
     if (data) {
       let torneo = getGroups(
         data.map((i) => i),
-        3,
-        12
+        2,
+        8
       );
       set((state) => ({
         torneo,
