@@ -143,13 +143,13 @@ const Score = () => {
             <p>Únete a las millones de personas que confían en Padel Slam para administrar sus torneos</p>
             <button>Ver</button>
             </div>
-
-       
+            <div>
             <img src={playerFond} className='img-mini-header'/>
+            </div>
           </div>
           
           <div className='card-container'>
-            <img src={players} className='img-card-container' />
+           {/*  <img src={players} className='img-card-container' /> */}
               <div className='like-padel-slam'>
                 <img src={icon1} style={{
                   width: "100px"
