@@ -43,9 +43,9 @@ const Tournament = () => {
   const calculateWin = (name) => {
     return tournament?.groups[group]?.games?.reduce((pv, cv) => {
       if (cv.left.name === name)
-        return pv + cv.rightScore ;
+        return pv + cv.leftScore ;
       if (cv.right.name === name)
-        return pv + cv.leftScore;
+        return pv + cv.rightScore;
       return pv;
     }, 0);
   };

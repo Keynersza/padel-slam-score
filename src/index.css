@@ -126,6 +126,7 @@ body {
     opacity: 0;
     transform: translateY(-20%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -225,6 +226,16 @@ body {
     transform: translate(0);
   }
 }
+@keyframes jugadoresOpenLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .container-tournament {
   background-image: url('./Assets/log.padel.jpeg');
@@ -232,6 +243,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
 .img-page-complete {
   width: 100%;
   height: 963px;
@@ -430,12 +442,10 @@ body {
   display: flex;
   justify-content: space-around;
   background: rgb(0, 1, 20);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 1, 20, 1) 0%,
-    rgba(10, 0, 136, 1) 60%,
-    rgba(7, 0, 91, 1) 95%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 1, 20, 1) 0%,
+      rgba(10, 0, 136, 1) 60%,
+      rgba(7, 0, 91, 1) 95%);
   color: white;
   width: 560px;
   font-size: 19px;
@@ -448,12 +458,10 @@ body {
   display: flex;
   justify-content: space-around;
   background: rgb(0, 1, 20);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 1, 20, 1) 0%,
-    rgba(10, 0, 136, 1) 60%,
-    rgba(7, 0, 91, 1) 95%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 1, 20, 1) 0%,
+      rgba(10, 0, 136, 1) 60%,
+      rgba(7, 0, 91, 1) 95%);
   color: white;
   width: 560px;
   border-radius: 10px 0px 0px 10px;
@@ -515,7 +523,7 @@ body {
 
 .dupla-score {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   gap: 70px;
   align-items: center;
 }
@@ -533,7 +541,7 @@ body {
   border-radius: 17px;
   width: 289px;
   background: rgb(241 241 241);
-  height: 202px;
+  height: 196px;
 }
 
 .games-players-score input {
@@ -548,9 +556,11 @@ body {
   font-family: 'Quartz MS';
   outline: none;
 }
+
 .input-right {
   background: #f82d97;
 }
+
 .input-left {
   background: rgb(4, 0, 255);
 }
@@ -611,6 +621,7 @@ body {
   font-size: 26px;
   margin: 2px;
 }
+
 .dupla-right {
   display: flex;
   flex-direction: column;
@@ -618,6 +629,7 @@ body {
   justify-content: center;
   width: 177px;
 }
+
 .players-right-color {
   color: #f82d97;
 }
@@ -701,6 +713,7 @@ body {
   font-weight: 400;
   font-family: 'Aspire SC Light Oblique';
 }
+
 .dupla-left {
   display: flex;
   flex-direction: column;
@@ -708,9 +721,11 @@ body {
   justify-content: center;
   width: 177px;
 }
+
 .players2-color {
   color: #0433e5;
 }
+
 .look-game {
   width: 100%;
   height: 55px;
@@ -723,6 +738,7 @@ body {
   color: rgb(255, 255, 255);
   transition: all 0.9s;
 }
+
 .look-game:hover {
   transform: scale(1.1);
 }
@@ -803,6 +819,7 @@ body {
 .true {
   border: 1px solid rgb(69 177 2) !important;
 }
+
 .input-padel-score label {
   margin-bottom: 10px;
   font-weight: 400;
@@ -895,10 +912,10 @@ body {
 
 
 .fond-padel {
-  width: 300px;
+  width: 234px;
   object-position: center;
   object-fit: cover;
-  height: 114px;
+  height: 92px
 }
 
 .fond-padel-games {
@@ -930,8 +947,10 @@ body {
   display: flex;
   align-items: center;
   padding: 0;
-  gap: 20%;
+  gap: 26%;
+  margin: 0;
 }
+
 .ul-header input {
   width: 28%;
   height: 50px;
@@ -941,14 +960,16 @@ body {
   font-size: 18px;
   outline: none;
 }
+
 .contenedor-login {
   display: flex;
   gap: 20px;
-  font-size: 17px;
+  font-size: 15px;
   align-items: center;
   position: absolute;
   right: 15px;
 }
+
 .contenedor-login li:first-child {
   border: 1px solid;
   padding: 10px;
@@ -957,7 +978,8 @@ body {
   border-radius: 7px;
   cursor: pointer;
 }
-.container-mini-header{
+
+.container-mini-header {
   height: 47vh;
   width: 100%;
   background: #f1f1f14f;
@@ -965,28 +987,33 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.box-con{
+
+.box-con {
   margin-left: 50px;
   width: 38%;
 }
-.img-mini-header{
-  width: 450px;
+
+.img-mini-header {
+  width: 432px;
   object-fit: cover;
   object-position: center;
-  height: 450px;
+  height: 433px;
 }
-.box-con h2{
+
+.box-con h2 {
   margin: 0;
   font-size: 70px;
   line-height: 75px;
   margin-bottom: 10px;
 }
-.box-con p{
+
+.box-con p {
   margin: 0;
-    color: gray;
-    font-size: 20px;
+  color: gray;
+  font-size: 20px;
 }
-.box-con button{
+
+.box-con button {
   width: 112px;
   height: 51px;
   margin-top: 20px;
@@ -995,6 +1022,7 @@ body {
   background: #000072;
   border-radius: 9px;
 }
+
 .contenedor-login li:nth-child(2) {
   padding: 10px;
   border-radius: 7px;
@@ -1002,6 +1030,7 @@ body {
   border: none;
   color: white;
 }
+
 .box-contenedora {
   display: flex;
   flex-direction: column;
@@ -1009,6 +1038,7 @@ body {
   background: #e9e9e92e;
   height: 63vh;
 }
+
 .box-contenedora div:nth-child(1) {
   display: flex;
   flex-direction: column;
@@ -1019,6 +1049,7 @@ body {
   margin-top: 21px;
   width: 27%;
 }
+
 .box-contenedora div:nth-child(2) {
   display: flex;
   flex-direction: column;
@@ -1029,10 +1060,12 @@ body {
   top: 1253px;
   width: 26%;
 }
+
 .box-contenedora img {
   width: 150px;
 }
-.card-container{
+
+.card-container {
   width: 100%;
   height: 31vh;
   display: flex;
@@ -1041,47 +1074,53 @@ body {
   padding: 0rem;
   background-color: rgb(242, 242, 242);
 }
+
 /* .card-container div{
   border: 1px solid rgb(213, 213, 213);
   box-shadow: 2px 2px 10px 0px;
   padding: 1rem;
 } */
-.card-container h3{
+.card-container h3 {
   font-size: 16px;
   color: #000;
   font-weight: 500;
   margin: 0;
 }
-.card-container p{
+
+.card-container p {
   font-size: 15px;
   color: #898989;
   font-weight: 400;
   margin: 0;
   line-height: 23px;
 }
+
 .card-container button {
   width: 100px;
-    height: 42px;
-    margin-top: 6px;
-    border: none;
-    color: white;
-    background: #000072;
-    border-radius: 9px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.7s;
+  height: 42px;
+  margin-top: 6px;
+  border: none;
+  color: white;
+  background: #000072;
+  border-radius: 9px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.7s;
 }
-.card-container button:hover{
+
+.card-container button:hover {
   background: #0000ff;
   transition: all 0.7s ease-in-out;
 }
-.like-padel-slam{
+
+.like-padel-slam {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 17px
 }
-.like-padel-slam div{
+
+.like-padel-slam div {
   display: flex;
   flex-direction: column;
   margin-left: 14px;
@@ -1089,20 +1128,23 @@ body {
   width: 72%;
 
 }
-.boleto-padel-slam{
+
+.boleto-padel-slam {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 17px
 }
-.boleto-padel-slam div{
+
+.boleto-padel-slam div {
   display: flex;
   flex-direction: column;
   margin-left: 14px;
   justify-content: center;
   width: 72%;
 }
-.img-card-container{
+
+.img-card-container {
   width: 520px;
   clip-path: polygon(0 0, 79% 0, 100% 99%, 0 100%);
   object-fit: cover;
@@ -1115,6 +1157,7 @@ body {
   justify-content: center;
   padding: 17px
 }
+
 .trofeo-padel-slam div {
   display: flex;
   flex-direction: column;
@@ -1135,10 +1178,9 @@ body {
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(166, 164, 164);
   font-family: 'Roboto', sans-serif;
- 
   gap: 80px;
 }
 
@@ -1152,9 +1194,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .container-box-pts-score h1 {
   font-family: 'Roboto', sans-serif;
 }
+
 .box-pt-st {
   display: flex;
   position: absolute;
@@ -1162,6 +1206,7 @@ body {
   gap: 29px;
   right: 44%;
 }
+
 .box-pt-st p {
   margin: 0px;
   font-family: 'Roboto', sans-serif;
@@ -1174,23 +1219,28 @@ body {
   gap: 29px;
   right: 44%;
 }
+
 .box-botton-pts {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 54px;
 }
+
 .box-botton-pts h2 {
   font-size: 30px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
 }
+
 .color-pts-but {
   color: #008cff;
 }
+
 .color-set-but {
   color: #3a00eb;
 }
+
 .box-botton-pts button {
   width: 50px;
   height: 50px;
@@ -1214,6 +1264,7 @@ body {
   height: 33vh;
   text-align: center;
 }
+
 .container-footer p {
   width: 100%;
   font-size: 15px;
@@ -1229,12 +1280,14 @@ body {
   height: 726px;
   width: 100%;
 }
+
 .img-swipers {
   width: 100%;
   height: 877px;
   object-fit: cover;
   object-position: center;
 }
+
 .separador {
   margin: 0px;
   position: absolute;
@@ -1242,6 +1295,7 @@ body {
   border: 1px solid rgba(128, 128, 128, 0.13);
   width: 1901px;
 }
+
 .swiper-img {
   width: 100%;
   height: 877px;
@@ -1260,16 +1314,19 @@ body {
     opacity: 0;
     transform: translateX(-40%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes rightLeft {
   0% {
     opacity: 0;
     transform: translateX(40%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -1283,59 +1340,82 @@ body {
     position: absolute;
     left: auto;
     top: 12%;
+  }
+  .button-side {
+    position: absolute;
+    right: 20px;
+    display: block;
+    top: 2%;
+    padding: 22px;
+    font-size: 12px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    border-radius: 10px;
+    z-index: 100;
 }
-.dupla-score {
-  display: flex;
-  margin-bottom: 30px;
-  gap: 16px;
-  align-items: center;
-}
-.dupla-score h2 {
-  font-family: 'Aspire SC LIGHT OBLIQUE';
-  font-size: 19px;
-  margin: 2px;
-}
-.look-game {
-  width: 98%;
-  height: 53px;
-  font-size: 14px;
-  padding: 0rem;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  background: rgb(0, 38, 255);
-  color: rgb(255, 255, 255);
-  transition: all 0.9s;
-}
-.separador {
-display: none;
-}
-.games-players-score input {
-  height: 53px;
-  border-radius: 14px;
-  padding: 18px;
-  text-align: center;
-  width: 71px;
-  border: none;
-  font-size: 74px;
-  color: rgb(255, 255, 255);
-  font-family: 'Quartz MS';
-  outline: none;
-}
-.dupla-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-}
-.dupla-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-}
+  .dupla-score {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .dupla-score h2 {
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 14px;
+    margin: 2px;
+  }
+
+  .look-game {
+    width: 98%;
+    height: 53px;
+    font-size: 14px;
+    padding: 0rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: rgb(0, 38, 255);
+    color: rgb(255, 255, 255);
+    transition: all 0.9s;
+  }
+
+  .separador {
+    display: none;
+  }
+
+  .games-players-score input {
+    height: 53px;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    width: 71px;
+    border: none;
+    font-size: 74px;
+    color: rgb(255, 255, 255);
+    font-family: 'Quartz MS';
+    outline: none;
+  }
+
+  .dupla-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .dupla-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+  }
 
   .title-create-tournament {
     font-size: 27px;
@@ -1344,41 +1424,47 @@ display: none;
     font-family: unset;
     text-align: center;
     margin: 38px;
-}
-  .flex-on{
-    display: block;
   }
-  .flex-off{
+
+  .flex-on {
+    display: block;
+    
+  }
+
+  .flex-off {
     display: none;
   }
-  .contenedor-open{
-   
-      position: absolute;
-      left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 29px;
-      top: 0px;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      background: whitesmoke;
-  
+
+  .contenedor-open {
+
+    position: absolute;
+    left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: whitesmoke;
+
   }
+
   .contenedor-login {
     display: flex;
     gap: 20px;
     font-size: 17px;
     align-items: center;
-  position: unset;
-}
-  .menu-responsive{
+    position: unset;
+  }
+
+  .menu-responsive {
     display: block;
     position: absolute;
     right: 15px;
-    top: 22px;
-    width: 63px;
+    top: 10px;
+    width: 60px;
     height: 53px;
     border: none;
     border-radius: 10px;
@@ -1386,18 +1472,21 @@ display: none;
     color: white;
     font-size: 17px;
   }
+
   .box-con h2 {
     margin: 0;
     font-size: 39px;
     line-height: 48px;
     margin-bottom: 10px;
-}
+  }
+
   .fond-padel {
     width: 234px;
     object-position: center;
     object-fit: cover;
     height: 75px;
-}
+  }
+
   .container-mini-header {
     height: 47vh;
     width: 100%;
@@ -1405,24 +1494,45 @@ display: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.img-mini-header {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  height: 408px;
-}
+  }
 
-.box-con {
-  margin-left: 23px;
-  width: 50%;
+  .img-mini-header {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 399px;
+  }
+
+  .box-con {
+    margin-left: 23px;
+    width: 50%;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 51vh;
+    display: block;
+    padding: 0rem;
+    background-color: rgb(242, 242, 242);
+  }
 }
-.card-container {
-  width: 100%;
-  height: 51vh;
-  display: block;
-  padding: 0rem;
-  background-color: rgb(242, 242, 242);
+@media (max-width: 600px) {
+  .button-side {
+    position: absolute;
+    right: 20px;
+    display: block;
+    top: 2%;
+    padding: 22px;
+    font-size: 12px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    border-radius: 10px;
+    z-index: 100;
 }
 }
 @media (max-width: 560px) {
@@ -1435,18 +1545,269 @@ display: none;
     border-radius: 10px;
     margin-left: 15px;
     outline: none;
-    
-}
-.title-create-tournament {
-  font-size: 27px;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
-  font-family: unset; 
-  text-align: center;
-  margin: 38px;
-}
+
+  }
+
+  .title-create-tournament {
+    font-size: 27px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-family: unset;
+    text-align: center;
+    margin: 38px;
+  }
 
 }
+@media (max-width: 520px) {
+  .input-padel-score input {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid rgb(114, 111, 111);
+    color: #38383899;
+    border-radius: 10px;
+    margin-left: 15px;
+    outline: none;
+    width: 210px;
+}
+.name-dupla {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+}
+}
+@media (max-width: 500px) {
+  .dupla-score h2 {
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 13px;
+    margin: 0px;
+}
+
+.dupla-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+}
+.dupla-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 113px;
+}
+.games-players-score input {
+  height: 35px;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  width: 47px;
+  border: none;
+  font-size: 58px;
+  color: rgb(255, 255, 255);
+  font-family: 'Quartz MS';
+  outline: none;
+}
+.button-side {
+  position: absolute;
+  right: 20px;
+  display: block;
+  top: 2%;
+  padding: 22px;
+  font-size: 12px;
+  border: none;
+  background: rgb(0, 48, 255);
+  background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+  animation: jugRight 0.7s ease-in;
+  font-family: 'Aspire SC Light Oblique';
+  border-radius: 10px;
+  z-index: 100;
+}
+.groups_games {
+  width: 45%;
+  position: absolute;
+  display: inline-flex;
+  height: 84px;
+  margin-left: 10px;
+}
+.jugadores-open{
+  z-index: 99;
+    background: #f1f1f1;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+    transition: all .3s;
+    animation: jugadoresOpenLeft 1s ease-in-out;
+}
+.duplas {
+  border: 1px solid rgba(160, 156, 156, 0.682);
+  box-shadow: -1px 1px 7px 0px #383838;
+  padding: 1px;
+  margin-top: 7px;
+  margin-left: 5px;
+  border-radius: 17px;
+  width: 289px;
+  background: rgb(241 241 241);
+  height: 202px;
+}
+.games-players-score {
+  z-index: 1;
+  position: absolute;
+  left: auto;
+  top: 12%;
+}
+.group-tor {
+  text-align: center;
+  font-size: 34px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0 0 0);
+  font-weight: 700;
+  margin: 20px;
+}
+.dupla-score {
+  display: flex;
+  margin-bottom: 30px;
+  gap: 6px;
+  align-items: center;
+}
+.button-groups {
+  transition: all 0.9s;
+  margin-top: 15px;
+  margin-left: 6%;
+  width: 61%;
+  height: 64px;
+  border-radius: 10px;
+  font-size: 11px;
+  border: none;
+  background: rgb(0, 48, 255);
+  background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+  animation: jugRight 0.7s ease-in;
+  font-family: 'Aspire SC Light Oblique';
+  z-index: 1;
+}
+}
+
+@media (max-width: 450px) {
+  .games-players-score {
+    z-index: 1;
+    position: absolute;
+    left: auto;
+    top: 12%;
+  }
+
+  .games-players-score input {
+  
+      height: 41px;
+      border-radius: 14px;
+      padding: 13px;
+      text-align: center;
+      width: 48px;
+      border: none;
+      font-size: 56px;
+      color: rgb(255, 255, 255);
+      font-family: 'Quartz MS';
+      outline: none;
+  
+  }
+  .duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: -1px 1px 7px 0px #383838;
+    padding: 1px;
+    margin-top: 7px;
+    border-radius: 17px;
+    margin-left: 5px;
+    width: 289px;
+    background: rgb(241 241 241);
+    height: 202px;
+}
+  .groups_games {
+    width: 49%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+    margin-left: 10px;
+  }
+
+  .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    margin-left: 3%;
+    width: 49%;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 12px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    z-index: 1;
+  }
+  .button-side {
+    position: absolute;
+    right: 2px;
+    display: block;
+    top: 2%;
+    padding: 22px;
+    font-size: 10px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    border-radius: 10px;
+    z-index: 100;
+}
+.jugadores-open {
+  z-index: 99;
+  background: #f1f1f1;
+  width: 100%;
+  height: 100vh;
+  padding: 0%;
+  transition: all .3s;
+  animation: jugadoresOpenLeft 1s ease-in-out;
+}
+
+  .dupla-score h2 {
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 11px;
+    margin: 2px;
+  }
+
+  .dupla-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+  }
+
+  .dupla-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 89px;
+  }
+
+  .dupla-score {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 7px;
+    align-items: center;
+}
+}
+
 @media (max-width: 400px) {
   .container-mini-header {
     height: 34vh;
@@ -1455,134 +1816,245 @@ display: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .input-padel-score label {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 10px;
 }
-.box-con h2 {
-  margin: 0;
-  font-size: 25px;
-  line-height: 31px;
-  margin-bottom: 10px;
-}
-.box-con p {
-  margin: 0;
-  color: gray;
-  font-size: 12px;
-}
-.img-mini-header {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  height: 100%;
-}
-.like-padel-slam {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-}
-.card-container {
-  width: 100%;
-  height: 64vh;
-  display: block;
-  padding: 0rem;
-  background-color: rgb(242, 242, 242);
-}
-.card-container p {
-  font-size: 12px;
-  color: #898989;
-  font-weight: 400;
-  margin: 0;
-  line-height: 23px;
-}
-.card-container h3 {
-  font-size: 18px;
-  color: #000;
-  font-weight: 500;
-  margin: 0;
-}
-.input-padel-score input {
-  padding: 10px;
-  font-size: 20px;
-  font-weight: 400;
-  border: 1px solid rgb(114, 111, 111);
-  color: #38383899;
-  border-radius: 6px;
-  margin-left: 15px;
-  outline: none;
-  width: 163px;
-}
-.name-dupla {
-  margin: 0;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 400;
+  .box-con h2 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 31px;
+    margin-bottom: 10px;
+  }
+  .button-side {
+    position: absolute;
+    right: 2px;
+    display: block;
+    top: 2%;
+    padding: 0;
+    font-size: 10px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    border-radius: 10px;
+    z-index: 100;
+    width: 83px;
+    height: 53px;
+    text-align: center;
 }
 
-.games-players-score input {
-  height: 29px;
-  border-radius: 14px;
-  padding: 18px;
-  text-align: center;
-  width: 40px;
-  border: none;
-  font-size: 61px;
-  color: rgb(255, 255, 255);
-  font-family: 'Quartz MS';
-  outline: none;
+  .box-con p {
+    margin: 0;
+    color: gray;
+    font-size: 12px;
+  }
+
+  .jugadores-open {
+    z-index: 99;
+    background: #f1f1f1;
+    width: 100%;
+    height: 99vh;
+    padding: 1%;
+    transition: all .3s;
+    animation: jugadoresOpenLeft 1s ease-in-out;
 }
-.dupla-left {
+
+.duplas {
+  border: 1px solid rgba(160, 156, 156, 0.682);
+  box-shadow: -1px 1px 7px 0px #383838;
+  padding: 1px;
+  margin-top: 6px;
+  border-radius: 17px;
+  width: 289px;
+  background: rgb(241 241 241);
+  height: 202px;
+}
+
+  .img-mini-header {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+  }
+
+  .like-padel-slam {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 64vh;
+    display: block;
+    padding: 0rem;
+    background-color: rgb(242, 242, 242);
+  }
+
+  .card-container p {
+    font-size: 12px;
+    color: #898989;
+    font-weight: 400;
+    margin: 0;
+    line-height: 23px;
+  }
+
+  .card-container h3 {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .input-padel-score input {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid rgb(114, 111, 111);
+    color: #38383899;
+    border-radius: 6px;
+    margin-left: 8px;
+    outline: none;
+    width: 163px;
+  }
+
+  .name-dupla {
+    margin: 0;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  .games-players-score input {
+    height: 29px;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    width: 40px;
+    border: none;
+    font-size: 61px;
+    color: rgb(255, 255, 255);
+    font-family: 'Quartz MS';
+    outline: none;
+  }
+
+  .dupla-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+  }
+
+  .dupla-score h2 {
+    font-family: 'Aspire SC LIGHT OBLIQUE';
+    font-size: 10px;
+    margin: 2px;
+  }
+
+  .dupla-score {
+    display: flex;
+    margin-bottom: 44px;
+    gap: 9px;
+    align-items: center;
+  }
+
+  .separador {
+    display: none;
+  }
+
+  .look-game {
+    width: 98%;
+    height: 53px;
+    font-size: 12px;
+    padding: 0rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: rgb(0, 38, 255);
+    color: rgb(255, 255, 255);
+    transition: all 0.9s;
+  }
+
+  .dupla-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+  }
+
+  .groups_games {
+    width: 51%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+    margin-left: 10px;
+  }
+
+  .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    margin-left: 3%;
+    width: 40%;
+    height: 61px;
+    border-radius: 18px;
+    font-size: 10px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    z-index: 1;
+  }
+
+
+
+
+
+
+
+
+
+
+}
+
+@media (max-width: 367px) {
+  .input-padel-score input {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid rgb(114, 111, 111);
+    color: #38383899;
+    border-radius: 6px;
+    margin-left: 7px;
+    outline: none;
+    width: 143px;
+}
+.container-mini-header {
+  height: 30vh;
+  width: 100%;
+  background: #f1f1f14f;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 84px;
-}
-.dupla-score h2 {
-  font-family: 'Aspire SC LIGHT OBLIQUE';
-  font-size: 11px;
-  margin: 2px;
-}
-.dupla-score {
-  display: flex;
-  margin-bottom: 54px;
-  gap: 9px;
+  justify-content: space-between;
   align-items: center;
 }
-.separador {
- display: none;
-}
-.look-game {
-  width: 98%;
-  height: 53px;
-  font-size: 12px;
-  padding: 0rem;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  background: rgb(0, 38, 255);
-  color: rgb(255, 255, 255);
-  transition: all 0.9s;
-}
-.dupla-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 86px;
-}
-.groups_games {
-  width: 51%;
+.button-side {
   position: absolute;
-  display: inline-flex;
-  height: 84px;
-  margin-left: 10px;
-}
-.button-groups {
-  transition: all 0.9s;
-  margin-top: 15px;
-  margin-left: 3%;
-  width: 40%;
-  height: 61px;
-  border-radius: 18px;
+  right: 2px;
+  display: block;
+  top: 2%;
+  padding: 0;
   font-size: 10px;
   border: none;
   background: rgb(0, 48, 255);
@@ -1591,18 +2063,86 @@ display: none;
   cursor: pointer;
   animation: jugRight 0.7s ease-in;
   font-family: 'Aspire SC Light Oblique';
+  border-radius: 10px;
   z-index: 100;
+  width: 62px;
+  height: 53px;
+  text-align: center;
+}
+.button-groups {
+  transition: all 0.9s;
+  margin-top: 15px;
+  margin-left: 3%;
+  width: 43%;
+  height: 61px;
+  border-radius: 9px;
+  font-size: 10px;
+  border: none;
+  background: rgb(0, 48, 255);
+  background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+  color: rgb(255 255 255);
+  cursor: pointer;
+  animation: jugRight 0.7s ease-in;
+  font-family: 'Aspire SC Light Oblique';
+  z-index: 1;
+}
+.dupla-score {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 42px;
 }
 
 
-
-
-
-
-
-
-
-
+.games-players-score {
+  left: auto;
+  position: absolute;
+  top: 12%;
+  z-index: 1;
+}
+.games-players-score input {
+  order: none;
+  border-radius: 14px;
+  color: #fff;
+  font-family: Quartz MS;
+  font-size: 52px;
+  height: 25px;
+  outline: none;
+  padding: 18px;
+  text-align: center;
+  width: 37px;
+}
+.dupla-left {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 64px;
+}
+.dupla-right {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 64px;
+}
+.dupla-score h2 {
+  font-family: Aspire SC LIGHT OBLIQUE;
+  font-size: 9px;
+  margin: 2px;
+}
+.look-game {
+  background: #0026ff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  height: 53px;
+  padding: 0;
+  transition: all .9s;
+  width: 98%;
+}
 }
 /* @media (max-width: 1460px) {
   .responsive-img {

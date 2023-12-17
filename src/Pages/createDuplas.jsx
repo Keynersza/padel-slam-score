@@ -149,7 +149,6 @@ const Score = () => {
           </div>
           
           <div className='card-container'>
-           {/*  <img src={players} className='img-card-container' /> */}
               <div className='like-padel-slam'>
                 <img src={icon1} style={{
                   width: "100px"
@@ -182,6 +181,7 @@ const Score = () => {
                 <button>Crear Torneo</button>
               </div>
               </div>
+             {/*  <img src={players} className='img-card-container' />  */}
             </div>
             <h2 className="title-create-tournament" id='title'>
               Enter the players who will be selected for the Tournament!
