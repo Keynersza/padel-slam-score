@@ -1334,6 +1334,51 @@ body {
 }
 
 @media (max-width: 700px) {
+  .duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: -1px 1px 7px 0px #383838;
+    padding: 1px;
+    margin-top: 7px;
+    margin-left: 5px;
+    border-radius: 17px;
+    width: 289px;
+    background: rgb(241 241 241);
+    height: 202px;
+}
+   .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    margin-left: 3%;
+    width: 43%;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 15px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    z-index: 1;
+}
+  .groups_games {
+    width: 52%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+    margin-left: 10px;
+}
+  .jugadores-open {
+    -webkit-animation: jugadoresOpenLeft 1s ease-in-out;
+    animation: jugadoresOpenLeft 1s ease-in-out;
+    background: #f1f1f1;
+    height: 100vh;
+    padding: 0;
+    transition: all .3s;
+    width: 100%;
+    z-index: 99;
+}
 
   .games-players-score {
     z-index: 1;
@@ -1517,6 +1562,51 @@ body {
   }
 }
 @media (max-width: 600px) {
+   .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    margin-left: 3%;
+    width: 43%;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 15px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    z-index: 1;
+}
+  .duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: -1px 1px 7px 0px #383838;
+    padding: 1px;
+    margin-top: 7px;
+    margin-left: 5px;
+    border-radius: 17px;
+    width: 289px;
+    background: rgb(241 241 241);
+    height: 202px;
+}
+.groups_games {
+    width: 52%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+    margin-left: 10px;
+}
+  .jugadores-open {
+    -webkit-animation: jugadoresOpenLeft 1s ease-in-out;
+    animation: jugadoresOpenLeft 1s ease-in-out;
+    background: #f1f1f1;
+    height: 100vh;
+    padding: 0;
+    transition: all .3s;
+    width: 100%;
+    z-index: 99;
+}
   .button-side {
     position: absolute;
     right: 20px;
@@ -1536,6 +1626,51 @@ body {
 }
 }
 @media (max-width: 560px) {
+  .button-groups {
+    transition: all 0.9s;
+    margin-top: 15px;
+    margin-left: 3%;
+    width: 43%;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 15px;
+    border: none;
+    background: rgb(0, 48, 255);
+    background: linear-gradient(270deg, rgb(4 0 255) 14%, rgb(3 1 92) 90%);
+    color: rgb(255 255 255);
+    cursor: pointer;
+    animation: jugRight 0.7s ease-in;
+    font-family: 'Aspire SC Light Oblique';
+    z-index: 1;
+}
+  .duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: -1px 1px 7px 0px #383838;
+    padding: 1px;
+    margin-top: 7px;
+    margin-left: 5px;
+    border-radius: 17px;
+    width: 289px;
+    background: rgb(241 241 241);
+    height: 202px;
+}
+  .groups_games {
+    width: 52%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+    margin-left: 10px;
+}
+  .jugadores-open {
+    -webkit-animation: jugadoresOpenLeft 1s ease-in-out;
+    animation: jugadoresOpenLeft 1s ease-in-out;
+    background: #f1f1f1;
+    height: 100vh;
+    padding: 0;
+    transition: all .3s;
+    width: 100%;
+    z-index: 99;
+}
   .input-padel-score input {
     padding: 10px;
     font-size: 20px;
@@ -1559,6 +1694,58 @@ body {
 
 }
 @media (max-width: 520px) {
+  .dupla-score {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 7px;
+    align-items: center;
+}
+  .groups_games {
+    width: 52%;
+    position: absolute;
+    display: inline-flex;
+    height: 84px;
+    margin-left: 10px;
+}
+  .jugadores-open {
+    -webkit-animation: jugadoresOpenLeft 1s ease-in-out;
+    animation: jugadoresOpenLeft 1s ease-in-out;
+    background: #f1f1f1;
+    height: 100vh;
+    padding: 0;
+    transition: all .3s;
+    width: 100%;
+    z-index: 99;
+}
+  .button-groups {
+    -webkit-animation: jugRight .7s ease-in;
+    animation: jugRight .7s ease-in;
+    background: #0030ff;
+    background: linear-gradient(270deg,#0400ff 14%,#03015c 90%);
+    border: none;
+    border-radius: 9px;
+    color: #fff;
+    cursor: pointer;
+    font-family: Aspire SC Light Oblique;
+    font-size: 15px;
+    height: 64px;
+    margin-left: 3%;
+    margin-top: 15px;
+    transition: all .9s;
+    width: 43%;
+    z-index: 1;
+}
+.duplas {
+    border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: -1px 1px 7px 0px #383838;
+    padding: 1px;
+    margin-top: 7px;
+    margin-left: 5px;
+    border-radius: 17px;
+    width: 289px;
+    background: rgb(241 241 241);
+    height: 202px;
+}
   .input-padel-score input {
     padding: 10px;
     font-size: 20px;
@@ -1692,7 +1879,6 @@ body {
   z-index: 1;
 }
 }
-
 @media (max-width: 450px) {
   .games-players-score {
     z-index: 1;
@@ -1807,7 +1993,6 @@ body {
     align-items: center;
 }
 }
-
 @media (max-width: 400px) {
   .container-mini-header {
     height: 34vh;
@@ -2028,7 +2213,6 @@ body {
 
 
 }
-
 @media (max-width: 367px) {
   .input-padel-score input {
     padding: 10px;
