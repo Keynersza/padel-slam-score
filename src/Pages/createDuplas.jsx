@@ -19,6 +19,7 @@ const Score = () => {
       jugador2: '',
       win: 0,
       lose: 0,
+      res: 0
     },
   ]);
 

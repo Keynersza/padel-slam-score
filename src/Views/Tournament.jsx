@@ -7,6 +7,7 @@ import logoPadel from '../Assets/OriginalLogo.png';
 const Tournament = () => {
   const [group, setGroup] = useState(0);
   const [group1, setGroup1] = useState(1);
+  const [playersSemi, setPlayersSemi] = useState([])
   /*  const [group2, setGroup2] = useState(2); */
   const [open, setOpen] = useState(false);
   const [render, setRender] = useState(Number);
@@ -37,6 +38,8 @@ const Tournament = () => {
           calculateLose(playerRightScore);
       }
     }
+    console.log(tournament.groups[group].players[0].win);
+    console.log(tournament.groups[group].players[1].win);
     setTournament({ ...tournament });
     updateGames(tournament);
   };
@@ -103,6 +106,23 @@ const Tournament = () => {
       return pv;
     }, 0);
   };
+/* const semiFinal = () =>{
+  if (tournament.groups[group].players[0].win >= 18) {
+    console.log("si");
+    if (tournament.groups[group].players[1].win >= 16) {
+      console.log("tambien");
+    }else{
+      console.log("tampoco ha cali");    
+    }
+  }else{
+    console.log("no ha sido clafisicado");
+  }
+} */
+/*   const semi = () =>{
+    let semiFinal = tournament?.groups[group]?.players[0]
+    setPlayersSemi(semiFinal) 
+    console.log(playersSemi);
+  } */
 
   /*   const handleChange3 = (e, index) => {
     tournament.groups[group2].games[index][e.target.name] = +e.target.value;
@@ -172,6 +192,8 @@ const Tournament = () => {
     setTournament(tournament);
     setGroup(group);
     setGroup1(group1);
+    setPlayersSemi(playersSemi)
+  
     /* setGroup2(group2); */
     /* setbuttomRender() */
   }, [tournament]);
@@ -189,6 +211,14 @@ const Tournament = () => {
         <button onClick={changedGroup2} className="button-groups">
           Grupo B
         </button>
+        <Link to={'/semi'}>
+        <button  className="button-groups">
+          Ver Semi
+        </button>
+        </Link>
+       {/*  <button onClick={semi} className="button-groups">
+          Semi
+        </button */}
         {/*  <button onClick={changedGroup3} className="button-groups">
           Grupo C
         </button> */}
@@ -345,7 +375,10 @@ const Tournament = () => {
             </div>
           </>
         )}
-        {/* {render == 2 && (
+
+
+
+ {/* {render == 2 && (
           <>
             <div
               className={

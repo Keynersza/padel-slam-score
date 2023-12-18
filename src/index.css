@@ -111,131 +111,6 @@ body {
   margin: 0px 0px 0px 12px;
 }
 
-@font-face {
-  font-family: 'Aspire SC LIGHT OBLIQUE';
-  src: url('Assets/fonts/AspireSCLightOblique-Regular.ttf'), format('ttf');
-}
-
-@font-face {
-  font-family: 'Quartz MS';
-  src: url('Assets/fonts/QuartzMSRegular.TTF'), format('ttf');
-}
-
-@keyframes duplaTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-20%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes puntoTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-20%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes puntoBut {
-  0% {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes nameTop1 {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes nameTop2 {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes ptsBut {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes timeTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes jugRight {
-  0% {
-    opacity: 0;
-    transform: translateX(15px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes jugadoresOpenLeft {
-  0%{
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100%{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .container-tournament {
   background-image: url('./Assets/log.padel.jpeg');
@@ -618,7 +493,7 @@ body {
 
 .dupla-score h2 {
   font-family: 'Aspire SC LIGHT OBLIQUE';
-  font-size: 26px;
+  font-size: 23px;
   margin: 2px;
 }
 
@@ -883,11 +758,7 @@ body {
   animation: l3 1s infinite linear;
 }
 
-@keyframes l3 {
-  to {
-    transform: rotate(1turn);
-  }
-}
+
 
 .create-duple-tournament {
   display: flex;
@@ -1307,6 +1178,254 @@ body {
   display: none;
   position: absolute;
   right: 0px;
+}
+
+.container-semifinalistas{
+  background-image: url('./Assets/log.padel.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.container-players-semi{
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+.title-semi{
+  margin: 0;
+}
+ 
+.container-semifinalistas p{
+  margin: 0;
+}
+.game-semifinal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 96vh;
+  gap: 50px;
+}
+.img-vs-semi{
+  display: flex;
+  flex-direction: column;
+  width: 131px;
+  gap: 227px;
+}
+
+.players-semifinalistas-A{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 97px;
+}
+
+.player-semifinalistas-B{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 97px;
+}
+
+.player-semifinalistas-B input{
+  background: #f82d97;
+}
+.players-semifinalistas-A input{
+  background: rgb(4, 0, 255);
+}
+.dupla-semi{
+  display: flex;
+  padding: 1rem;
+  width: 275px;
+  height: 210px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #f1f1f1;
+     border: 1px solid rgba(160, 156, 156, 0.682);
+    box-shadow: -1px 1px 7px 0px #383838;
+}
+.dupla-semi h2{
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'Aspire SC Light Oblique';
+  color: #959595;
+  text-align: center;
+  margin: 5px;
+}
+
+.win-lose-playersemi{
+  display: flex;
+  gap: 25px;
+}
+.win-lose-playersemi p:first-child{
+  color: #318d04;
+  margin-right: 18px;
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+  font-family: 'Quartz MS';
+}
+.win-lose-playersemi p:nth-child(2){
+  color: #e30000;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Quartz MS';
+}
+.game-semifinal input{
+  height: 108px;
+  width: 120px;
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    text-align: center;
+    font-size: 76px;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-family: 'Quartz MS';
+}
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Aspire SC LIGHT OBLIQUE';
+  src: url('Assets/fonts/AspireSCLightOblique-Regular.ttf'), format('ttf');
+}
+
+@font-face {
+  font-family: 'Quartz MS';
+  src: url('Assets/fonts/QuartzMSRegular.TTF'), format('ttf');
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes duplaTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes puntoTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes puntoBut {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nameTop1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes nameTop2 {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes ptsBut {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes timeTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes jugRight {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes jugadoresOpenLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes leftRight {

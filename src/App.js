@@ -5,6 +5,7 @@ import Score2 from './Pages/score2,';
 import { useState } from 'react';
 import Tournament from './Views/Tournament';
 import BotonesScore from './Views/botonesScore';
+import Semifinal from './Views/semifinal.jsx';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Score />} /> 
+        <Route path='/semi' element={<Semifinal/>} /> 
         <Route path='/b' element={<BotonesScore />} /> 
         <Route path='/games' element={<Tournament />} /> 
         <Route path='/score/:id' element={<Score2 />} />
