@@ -1,64 +1,76 @@
 import React, { useEffect, useState } from 'react';
 import { useGameStore } from '../Components/Torneo/hooks.ts';
 import { Link } from 'react-router-dom';
-import DarkMode from '../Components/darkMode.jsx';
-import imagen from '../Assets/Recurso 3Fondo.png';
-import logoPadel from '../Assets/OriginalLogo.png';
 const Tournament = () => {
   const [group, setGroup] = useState(0);
   const [group1, setGroup1] = useState(1);
-  const [playersSemi, setPlayersSemi] = useState([])
   /*  const [group2, setGroup2] = useState(2); */
   const [open, setOpen] = useState(false);
+  const [openTablePositions, setOpenTablePositions] = useState(false);
   const [render, setRender] = useState(Number);
   const { torneo, updateGames } = useGameStore();
   const [tournament, setTournament] = useState(torneo);
 
   const handleChange = (e, index) => {
     tournament.groups[group].games[index][e.target.name] = +e.target.value;
-    let playerLeftScore =
+    let playerScore =
       e.target.name === 'leftScore'
-        ? tournament.groups[group].games[index].right.name
-        : tournament.groups[group].games[index].left.name
-
-    let playerRightScore =
+        ? tournament.groups[group].games[index].right.name &&
+          tournament.groups[group].games[index].left.name
+        : tournament.groups[group].games[index].left.name ||
+          tournament.groups[group].games[index].right.name;
+    let playerRight =
       e.target.name === 'rightScore'
-        ? tournament.groups[group].games[index].left.name
-        : tournament.groups[group].games[index].right.name
+        ? tournament.groups[group].games[index].right.name
+        : tournament.groups[group].games[index].left.name;
+
     for (let i = 0; i < tournament.groups[group].players.length; i++) {
-      if (
-        tournament.groups[group].players[i].name === playerLeftScore
-      ) {
-        tournament.groups[group].players[i].win = calculateWin(playerLeftScore);
+      if (tournament.groups[group].players[i].name === playerScore) {
+        tournament.groups[group].players[i].win = calculateWin(playerScore);
+        tournament.groups[group].players[i].lose = calculateLose(playerScore);
       }
-      if (
-        tournament.groups[group].players[i].name === playerRightScore
-      ) {
-        tournament.groups[group].players[i].lose =
-          calculateLose(playerRightScore);
+      if (tournament.groups[group].players[i].name === playerRight) {
+        tournament.groups[group].players[i].win = calculateWin(playerRight);
+        tournament.groups[group].players[i].lose = calculateLose(playerRight);
       }
     }
-    console.log(tournament.groups[group].players[0].win);
-    console.log(tournament.groups[group].players[1].win);
+
+    if (playerScore) {
+      calculatePts();
+    }
     setTournament({ ...tournament });
     updateGames(tournament);
   };
+
+  const calculatePts = () => {
+    for (let i = 0; i < tournament.groups[group].players.length; i++) {
+      let grupoA = [tournament.groups[group].players[i]];
+      grupoA.push([i]);
+      let respuestaGroupsA = grupoA[0].win - grupoA[0].lose;
+      console.log((grupoA[0].res = respuestaGroupsA));
+
+      console.log(grupoA);
+    }
+    for (let i = 0; i < tournament.groups[group1].players.length; i++) {
+      let grupoB = [tournament.groups[group1].players[i]];
+      grupoB.push([i]);
+      let respuestaGroupsB = grupoB[0].win - grupoB[0].lose;
+      console.log((grupoB[0].res = respuestaGroupsB));
+    }
+  };
+
   const calculateWin = (name) => {
     return tournament?.groups[group]?.games?.reduce((pv, cv) => {
-      if (cv.left.name === name)
-        return pv + cv.leftScore ;
-      if (cv.right.name === name)
-        return pv + cv.rightScore;
+      if (cv.left.name === name) return pv + cv.leftScore;
+      if (cv.right.name === name) return pv + cv.rightScore;
       return pv;
     }, 0);
   };
 
   const calculateLose = (name) => {
     return tournament?.groups[group]?.games?.reduce((pv, cv) => {
-      if (cv.left.name === name )
-        return pv + cv.rightScore;
-      if (cv.right.name === name)
-        return pv + cv.leftScore;
+      if (cv.right.name === name) return pv + cv.leftScore;
+      if (cv.left.name === name) return pv + cv.rightScore;
       return pv;
     }, 0);
   };
@@ -106,7 +118,13 @@ const Tournament = () => {
       return pv;
     }, 0);
   };
-/* const semiFinal = () =>{
+
+  const positionTable = () => {
+    setOpenTablePositions(!openTablePositions);
+    console.log('Abriendo');
+  };
+
+  /* const semiFinal = () =>{
   if (tournament.groups[group].players[0].win >= 18) {
     console.log("si");
     if (tournament.groups[group].players[1].win >= 16) {
@@ -118,7 +136,7 @@ const Tournament = () => {
     console.log("no ha sido clafisicado");
   }
 } */
-/*   const semi = () =>{
+  /*   const semi = () =>{
     let semiFinal = tournament?.groups[group]?.players[0]
     setPlayersSemi(semiFinal) 
     console.log(playersSemi);
@@ -192,8 +210,7 @@ const Tournament = () => {
     setTournament(tournament);
     setGroup(group);
     setGroup1(group1);
-    setPlayersSemi(playersSemi)
-  
+    /*    calculatePts() */
     /* setGroup2(group2); */
     /* setbuttomRender() */
   }, [tournament]);
@@ -211,12 +228,13 @@ const Tournament = () => {
         <button onClick={changedGroup2} className="button-groups">
           Grupo B
         </button>
+        <button onClick={positionTable}>Tabla de Posiciones</button>
+        {/* <button  className="button-groups">
         <Link to={'/semi'}>
-        <button  className="button-groups">
           Ver Semi
-        </button>
         </Link>
-       {/*  <button onClick={semi} className="button-groups">
+        </button> */}
+        {/*  <button onClick={semi} className="button-groups">
           Semi
         </button */}
         {/*  <button onClick={changedGroup3} className="button-groups">
@@ -227,40 +245,78 @@ const Tournament = () => {
       {/* if(render == 1 || render == 2  && render == 3){
 
 } */}
+
       <div>
         <button className="button-side" onClick={() => sideVar()}>
           Duplas
         </button>
       </div>
+      {openTablePositions && (
+        <div className="container-position-table">
+          {tournament.groups[group].players.map((player, index) => (
+              <div>
+            <div key={index} className="box-table-position">
+
+              <div className="position-table">
+                <div className="position-dupla">
+                  <h1>{player.name}</h1>
+                  <p>{player.jugador1}</p>
+                  <p>{player.jugador2}</p>
+                </div>
+                <p>{player.win}</p>
+                <p>{player.lose}</p>
+                <p>{player.res}</p>
+              </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="tournament">
         {render == 0 && (
           <>
-            <div
-              className={
-                open ? 'jugadores-open flex-on' : 'jugadores-flex flex-off'
-              }
-            >
-              {tournament.groups[group]?.players
-                .sort((b, a) => {
-                  return a.win - a.lose - (b.win - b.lose);
-                })
-                .map((jug) => (
-                  <>
-                    <div className="duplas">
-                      <div className="win-lose">
-                        <p>Win</p>
-                        <p>Lose</p>
+            <div>
+              <div
+                className={
+                  open ? 'jugadores-open flex-on' : 'jugadores-flex flex-off'
+                }
+              >
+                {tournament.groups[group]?.players
+                  .sort((b, a) => {
+                    return a.win - a.lose - (b.win - b.lose);
+                  })
+                  .map((jug) => (
+                    <>
+                      <div className="duplas">
+                        <div className="win-lose">
+                          <p>Win</p>
+                          <p>Lose</p>
+                          <p>Pts</p>
+                        </div>
+                        <div className="box-score-duplas">
+                          {/* <h2>{jug.name} </h2> */}
+                          <p className="r-left-ganados">{jug.win}</p>
+                          <p className="l-right-perdido">{jug.lose}</p>
+                          {jug.res > 0 ? (
+                            <>
+                              <p className="pts-res">
+                                <span className="span-suma">+</span>
+                                {jug.res}
+                              </p>
+                            </>
+                          ) : (
+                            <>
+                              <p className="pts-res">{jug.res}</p>
+                            </>
+                          )}
+                        </div>
+                        <p className="jugadores">{jug.jugador1}</p>
+                        <p className="jugadores">{jug.jugador2} </p>
                       </div>
-                      <div className="box-score-duplas">
-                        {/* <h2>{jug.name} </h2> */}
-                        <p className="r-left-ganados">{jug.win}</p>
-                        <p className="l-right-perdido">{jug.lose}</p>
-                      </div>
-                      <p className="jugadores">{jug.jugador1}</p>
-                      <p className="jugadores">{jug.jugador2} </p>
-                    </div>
-                  </>
-                ))}
+                    </>
+                  ))}
+              </div>
             </div>
 
             <div className="games-players-score">
@@ -268,7 +324,7 @@ const Tournament = () => {
               {tournament.groups[group]?.games.map((juegos, index) => (
                 <>
                   <div className="dupla-score">
-                    <div className="dupla-left">
+                    <div className="players-duplas">
                       <h2 className="players-color">{juegos.left.jugador1}</h2>
                       <h2 className="players2-color">{juegos.left.jugador2}</h2>
                     </div>
@@ -292,7 +348,7 @@ const Tournament = () => {
                       name="rightScore"
                     />
 
-                    <div className="dupla-right">
+                    <div className="players-duplas">
                       <h2 className="players-right-color">
                         {juegos.right.jugador1}
                       </h2>
@@ -321,11 +377,24 @@ const Tournament = () => {
                       <div className="win-lose">
                         <p>Win</p>
                         <p>Lose</p>
+                        <p>Pts</p>
                       </div>
                       <div className="box-score-duplas">
                         {/* <h2>{jug.name} </h2> */}
                         <p className="r-left-ganados">{jug.win}</p>
                         <p className="l-right-perdido">{jug.lose}</p>
+                        {jug.res > 0 ? (
+                          <>
+                            <p className="pts-res">
+                              <span className="span-suma">+</span>
+                              {jug.res}
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <p className="pts-res">{jug.res}</p>
+                          </>
+                        )}
                       </div>
                       <p className="jugadores">{jug.jugador1}</p>
                       <p className="jugadores">{jug.jugador2} </p>
@@ -339,7 +408,7 @@ const Tournament = () => {
               {tournament.groups[group1]?.games.map((juegos, index) => (
                 <>
                   <div className="dupla-score">
-                    <div className="dupla-left">
+                    <div className="players-duplas">
                       <h2 className="players-color">{juegos.left.jugador1}</h2>
                       <h2 className="players2-color">{juegos.left.jugador2}</h2>
                     </div>
@@ -363,7 +432,7 @@ const Tournament = () => {
                       name="rightScore"
                     />
 
-                    <div className="dupla-right">
+                    <div className="players-duplas">
                       <h2 className="players-right-color">
                         {juegos.right.jugador1}
                       </h2>
@@ -376,9 +445,7 @@ const Tournament = () => {
           </>
         )}
 
-
-
- {/* {render == 2 && (
+        {/* {render == 2 && (
           <>
             <div
               className={

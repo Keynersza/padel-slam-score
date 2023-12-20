@@ -63,6 +63,7 @@ const Score = () => {
           name: 'Dupla ' + (inputs.length + 1),
           win: 0,
           lose: 0,
+          res: 0
         },
       ]);
     } else {
