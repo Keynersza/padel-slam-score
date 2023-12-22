@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useGameStore } from '../Components/Torneo/hooks.ts';
 import { Link } from 'react-router-dom';
+import { MagicExit, MagicMotion } from 'react-magic-motion';
+import 'animate.css';
 const Tournament = () => {
   const [group, setGroup] = useState(0);
   const [group1, setGroup1] = useState(1);
@@ -8,6 +10,7 @@ const Tournament = () => {
   const [open, setOpen] = useState(false);
   const [openTablePositions, setOpenTablePositions] = useState(false);
   const [render, setRender] = useState(Number);
+  const [animationActive, setAnimationActive] = useState(false);
   const { torneo, updateGames } = useGameStore();
   const [tournament, setTournament] = useState(torneo);
 
@@ -34,10 +37,8 @@ const Tournament = () => {
         tournament.groups[group].players[i].lose = calculateLose(playerRight);
       }
     }
+    calculatePts(playerScore || playerRight);
 
-    if (playerScore) {
-      calculatePts();
-    }
     setTournament({ ...tournament });
     updateGames(tournament);
   };
@@ -77,51 +78,57 @@ const Tournament = () => {
 
   const handleChange2 = (e, index) => {
     tournament.groups[group1].games[index][e.target.name] = +e.target.value;
-    let playerName =
+    let playerNameLeft =
       e.target.name === 'leftScore'
-        ? tournament.groups[group1].games[index].right.jugador1 &&
-          tournament.groups[group1].games[index].right.jugador2
-        : tournament.groups[group1].games[index].left.jugador1 &&
-          tournament.groups[group1].games[index].left.jugador2;
-
+        ? tournament.groups[group1].games[index].right.name &&
+          tournament.groups[group1].games[index].left.name
+        : tournament.groups[group1].games[index].left.name ||
+          tournament.groups[group1].games[index].right.name;
+    let playerNameRight =
+      e.target.name === 'rightScore'
+        ? tournament.groups[group1].games[index].right.name
+        : tournament.groups[group1].games[index].left.name;
     for (let i = 0; i < tournament.groups[group1].players.length; i++) {
-      if (
-        tournament.groups[group1].players[i].jugador1 &&
-        tournament.groups[group1].players[i].jugador2 === playerName
-      ) {
+      if (tournament.groups[group1].players[i].name === playerNameLeft) {
         tournament.groups[group1].players[i].win =
-          calulateWinGroup1(playerName);
+          calulateWinGroup1(playerNameLeft);
         tournament.groups[group1].players[i].lose =
-          calulateLoseGroup1(playerName);
+          calulateLoseGroup1(playerNameLeft);
+      }
+      if (tournament.groups[group1].players[i].name === playerNameRight) {
+        tournament.groups[group1].players[i].win =
+          calulateWinGroup1(playerNameRight);
+        tournament.groups[group1].players[i].lose =
+          calulateLoseGroup1(playerNameRight);
       }
     }
+    calculatePts(playerNameLeft || playerNameRight);
     setTournament({ ...tournament });
     updateGames(tournament);
   };
 
-  const calulateWinGroup1 = (jugadores) => {
+  const calulateWinGroup1 = (name) => {
     return tournament?.groups[group1]?.games?.reduce((pv, cv) => {
-      if (cv.left.jugador1 && cv.left.jugador2 === jugadores)
-        return pv + cv.leftScore;
-      if (cv.right.jugador1 && cv.right.jugador2 === jugadores)
-        return pv + cv.rightScore;
+      if (cv.left.name === name) return pv + cv.leftScore;
+      if (cv.right.name === name) return pv + cv.rightScore;
       return pv;
     }, 0);
   };
 
-  const calulateLoseGroup1 = (jugadores) => {
+  const calulateLoseGroup1 = (name) => {
     return tournament?.groups[group1]?.games?.reduce((pv, cv) => {
-      if (cv.left.jugador1 && cv.left.jugador2 === jugadores)
-        return pv + cv.rightScore;
-      if (cv.right.jugador1 && cv.right.jugador2 === jugadores)
-        return pv + cv.leftScore;
+      if (cv.left.name === name) return pv + cv.rightScore;
+      if (cv.right.name === name) return pv + cv.leftScore;
       return pv;
     }, 0);
   };
 
   const positionTable = () => {
     setOpenTablePositions(!openTablePositions);
-    console.log('Abriendo');
+  };
+
+  const activeTable = () => {
+    setOpenTablePositions(!openTablePositions);
   };
 
   /* const semiFinal = () =>{
@@ -210,8 +217,7 @@ const Tournament = () => {
     setTournament(tournament);
     setGroup(group);
     setGroup1(group1);
-    /*    calculatePts() */
-    /* setGroup2(group2); */
+    calculatePts(); /* setGroup2(group2); */
     /* setbuttomRender() */
   }, [tournament]);
 
@@ -228,7 +234,7 @@ const Tournament = () => {
         <button onClick={changedGroup2} className="button-groups">
           Grupo B
         </button>
-        <button onClick={positionTable}>Tabla de Posiciones</button>
+
         {/* <button  className="button-groups">
         <Link to={'/semi'}>
           Ver Semi
@@ -251,31 +257,104 @@ const Tournament = () => {
           Duplas
         </button>
       </div>
-      {openTablePositions && (
-        <div className="container-position-table">
-          {tournament.groups[group].players.map((player, index) => (
-              <div>
-            <div key={index} className="box-table-position">
 
-              <div className="position-table">
-                <div className="position-dupla">
-                  <h1>{player.name}</h1>
-                  <p>{player.jugador1}</p>
-                  <p>{player.jugador2}</p>
-                </div>
-                <p>{player.win}</p>
-                <p>{player.lose}</p>
-                <p>{player.res}</p>
-              </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      {openTablePositions ? (
+        <>
+          <button onClick={activeTable} className="close-position-table ">
+            X
+          </button>
+        </>
+      ) : (
+        <>
+          <button onClick={positionTable} className="button-position-table ">
+            Tabla de Posiciones
+          </button>
+        </>
       )}
 
       <div className="tournament">
         {render == 0 && (
           <>
+            <MagicMotion>
+              <MagicExit
+                initial={{ opacity: 0, y: -0 }}
+                animate={{
+                  opacity: 1,
+                  y: -0,
+                  transition: {
+                    y: -0
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  y: 0,
+                  transition: {
+                    opacity: { duration: 0.175 },
+                    y: { duration: 0.25 },
+                  },
+                }}
+              >
+                {openTablePositions && (
+                  <div className="container-position-table ">
+                    <div className="container-duplas-table-position animate__animated animate__fadeInDown">
+                      <div className="title-table">
+                        <h2>Tabla de Posiciones</h2>
+                        <h2>Grupo A</h2>
+                      </div>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Duplas</th>
+                            <th>Player 1</th>
+                            <th>Player 2</th>
+                            <th>Win</th>
+                            <th>Lose</th>
+                            <th>Pts</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {tournament.groups[group].players.map(
+                            (player, index) => (
+                              <tr key={index}>
+                                <td>{player.name}</td>
+                                <td>{player.jugador1}</td>
+                                <td>{player.jugador2}</td>
+                                <td>
+                                  <span className="win-table">
+                                    {player.win}
+                                  </span>
+                                </td>
+                                <td>
+                                  {' '}
+                                  <span className="lose-table">
+                                    {player.lose}
+                                  </span>
+                                </td>
+                                {player.res > 0 ? (
+                                  <td>
+                                    {' '}
+                                    <span className="pts-table">
+                                      +{player.res}
+                                    </span>
+                                  </td>
+                                ) : (
+                                  <td>
+                                    {' '}
+                                    <span className="pts-table">
+                                      {player.res}
+                                    </span>
+                                  </td>
+                                )}
+                              </tr>
+                            )
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </MagicExit>
+            </MagicMotion>
             <div>
               <div
                 className={
@@ -362,6 +441,86 @@ const Tournament = () => {
         )}
         {render == 1 && (
           <>
+            <MagicMotion>
+              <MagicExit
+                initial={{ opacity: 0, y: -0 }}
+                animate={{
+                  opacity: 1,
+                  y: -0,
+                  transition: {
+                    y: -0
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  y: 0,
+                  transition: {
+                    opacity: { duration: 0.175 },
+                    y: { duration: 0.25 },
+                  },
+                }}
+              >
+                {openTablePositions && (
+                  <div className="container-position-table ">
+                    <div className="container-duplas-table-position animate__animated animate__fadeInDown">
+                      <div className="title-table">
+                        <h2>Tabla de Posiciones</h2>
+                        <h2>Grupo B</h2>
+                      </div>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Duplas</th>
+                            <th>Player 1</th>
+                            <th>Player 2</th>
+                            <th>Win</th>
+                            <th>Lose</th>
+                            <th>Pts</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {tournament.groups[group1].players.map(
+                            (player, index) => (
+                              <tr key={index}>
+                                <td>{player.name}</td>
+                                <td>{player.jugador1}</td>
+                                <td>{player.jugador2}</td>
+                                <td>
+                                  <span className="win-table">
+                                    {player.win}
+                                  </span>
+                                </td>
+                                <td>
+                                  {' '}
+                                  <span className="lose-table">
+                                    {player.lose}
+                                  </span>
+                                </td>
+                                {player.res > 0 ? (
+                                  <td>
+                                    {' '}
+                                    <span className="pts-table">
+                                      +{player.res}
+                                    </span>
+                                  </td>
+                                ) : (
+                                  <td>
+                                    {' '}
+                                    <span className="pts-table">
+                                      {player.res}
+                                    </span>
+                                  </td>
+                                )}
+                              </tr>
+                            )
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </MagicExit>
+            </MagicMotion>
             <div
               className={
                 open ? 'jugadores-open flex-on' : 'jugadores-flex flex-off'
